@@ -1,0 +1,12 @@
+# Ignore temporary scratch work and scraped HTML pages
+scratch/
+
+# Ignore local emails and configurations
+email_config.json
+last_update_notification.txt
+
+# Ignore OS-generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store

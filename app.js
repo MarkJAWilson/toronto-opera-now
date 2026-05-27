@@ -10,22 +10,22 @@ let activeMonthFilter = null;    // Format: "YYYY-MM" (e.g. "2026-06")
 let searchQuery = "";
 let currentView = "grid";        // "grid" or "calendar"
 
-// Define our 12-Month Calendar window (May 2026 to May 2027)
-const calendarMonths = [
-    { name: "May 2026", key: "2026-05" },
-    { name: "June 2026", key: "2026-06" },
-    { name: "July 2026", key: "2026-07" },
-    { name: "August 2026", key: "2026-08" },
-    { name: "September 2026", key: "2026-09" },
-    { name: "October 2026", key: "2026-10" },
-    { name: "November 2026", key: "2026-11" },
-    { name: "December 2026", key: "2026-12" },
-    { name: "January 2027", key: "2027-01" },
-    { name: "February 2027", key: "2027-02" },
-    { name: "March 2027", key: "2027-03" },
-    { name: "April 2027", key: "2027-04" },
-    { name: "May 2027", key: "2027-05" }
-];
+// Dynamically generate our 12-Month Calendar window starting from the current month
+const calendarMonths = (() => {
+    const months = [];
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth(); // 0-indexed (0 = Jan)
+
+    for (let i = 0; i < 13; i++) {
+        const d = new Date(currentYear, currentMonth + i, 1);
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const name = d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        months.push({ name, key: `${year}-${month}` });
+    }
+    return months;
+})();
 
 // Document Elements
 const globalSearchInput = document.getElementById("global-search");
@@ -73,6 +73,14 @@ async function initApp() {
         
         // Sort companies alphabetically (in case data.json wasn't fully sorted)
         operaData.companies.sort((a, b) => a.name.localeCompare(b.name));
+        
+        // Update season badge to show the dynamic window
+        const seasonBadgeText = document.querySelector(".season-badge");
+        if (seasonBadgeText && calendarMonths.length > 0) {
+            const startMonthName = calendarMonths[0].name;
+            const endMonthName = calendarMonths[calendarMonths.length - 1].name;
+            seasonBadgeText.innerHTML = `Season Window: <span class="gold-text">${startMonthName} - ${endMonthName}</span>`;
+        }
         
         setupEventListeners();
         renderCompanyFilters();
@@ -304,6 +312,13 @@ function updateDisplay() {
         if (activeCompanyFilter && company.abbreviation !== activeCompanyFilter) return;
         
         company.productions.forEach(prod => {
+            // Filter out productions that fall outside the active 12-month window
+            const firstMonthKey = calendarMonths[0].key;
+            const lastMonthKey = calendarMonths[calendarMonths.length - 1].key;
+            const prodStartMonth = prod.isoStart.substring(0, 7);
+            const prodEndMonth = prod.isoEnd ? prod.isoEnd.substring(0, 7) : prodStartMonth;
+            if (prodEndMonth < firstMonthKey || prodStartMonth > lastMonthKey) return;
+
             // Apply month filter
             if (activeMonthFilter && !isProductionInMonth(prod, activeMonthFilter)) return;
             

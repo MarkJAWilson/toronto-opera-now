@@ -1,0 +1,46 @@
+name: Daily Opera Database Scan
+
+on:
+  schedule:
+    # Runs daily at 07:00 UTC (which is 3:00 AM EST)
+    - cron: '0 7 * * *'
+  workflow_dispatch: # Allows you to run the scan manually from the GitHub Actions UI
+
+permissions:
+  contents: write # Allows the workflow to commit updates back to your repository
+
+jobs:
+  run-updater:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install beautifulsoup4
+
+      - name: Create Email Config from Secrets (Optional)
+        env:
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        run: |
+          if [ -n "$SMTP_USERNAME" ] && [ -n "$SMTP_PASSWORD" ]; then
+            echo "{\"smtp_server\": \"smtp.gmail.com\", \"port\": 587, \"username\": \"$SMTP_USERNAME\", \"password\": \"$SMTP_PASSWORD\", \"sender\": \"$SMTP_USERNAME\"}" > email_config.json
+          fi
+
+      - name: Run Scan Engine
+        run: python updater.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update opera schedules" && git push)

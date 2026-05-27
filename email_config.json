@@ -1,0 +1,7 @@
+{
+  "smtp_server": "smtp.gmail.com",
+  "port": 587,
+  "username": "mark@mwilson.on.ca",
+  "password": "uact ycnq lwek owrq",
+  "sender": "mark@mwilson.on.ca"
+}

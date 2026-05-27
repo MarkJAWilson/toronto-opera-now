@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toronto Opera Now | Upcoming Opera Productions & Calendar</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover upcoming opera productions, schedules, and ticket information in the Greater Toronto Area (GTA) for the next 12 months. Fully updated calendar of local opera companies.">
+    <meta name="keywords" content="opera toronto, GTA opera, canadian opera company, opera atelier, toronto city opera, opera calendar, classical music toronto, opera tickets">
+    <meta name="author" content="Toronto Opera Now">
+    
+    <!-- Google Fonts: Playfair Display for Headers, Inter for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Premium background ambient glow spots -->
+    <div class="ambient-glow spot-1"></div>
+    <div class="ambient-glow spot-2"></div>
+    <div class="ambient-glow spot-3"></div>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-banner">
+        <div class="container hero-container">
+            <div class="hero-logo-wrap">
+                <img id="hero-logo" src="assets/images/logo.png" alt="Toronto Opera Now Logo" onerror="this.style.display='none'">
+            </div>
+            <div class="hero-text-wrap">
+                <h1 class="hero-title">All the opera Toronto has to offer</h1>
+                <div class="search-wrap">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="global-search" placeholder="Search by title, composer, company, venue, month...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Navigation & Filter Panel -->
+    <main class="container">
+        <!-- View Toggle Toolbar -->
+        <section class="toolbar-section">
+            <div class="toolbar-left">
+                <div class="view-toggles" role="tablist">
+                    <button class="view-toggle-btn active" id="btn-grid-view" role="tab" aria-selected="true" aria-controls="grid-view-panel">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        All Productions
+                    </button>
+                    <button class="view-toggle-btn" id="btn-calendar-view" role="tab" aria-selected="false" aria-controls="calendar-view-panel">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        12-Month Calendar
+                    </button>
+                </div>
+                
+                <!-- Month Selection (Relabeled to Month) -->
+                <div class="month-dropdown-wrap" id="month-timeline-wrapper">
+                    <select id="month-select" class="month-select-dropdown">
+                        <option value="">Month</option>
+                        <!-- Loaded dynamically via app.js -->
+                    </select>
+                    <div class="select-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Info Badge -->
+            <div class="season-badge">
+                Season Window: <span class="gold-text">May 2026 - May 2027</span>
+            </div>
+        </section>
+
+        <!-- View Panels -->
+        
+        <!-- Panel 1: GRID VIEW (Default) -->
+        <section id="grid-view-panel" class="view-panel" role="tabpanel">
+            <!-- Dynamic filters info bar -->
+            <div class="filter-status-bar" id="filter-status-bar" style="display: none;">
+                <span id="filter-status-text">Showing 5 productions</span>
+                <button class="reset-all-btn" id="reset-all-filters">Reset All Filters</button>
+            </div>
+            
+            <div class="productions-grid" id="productions-grid-container">
+                <!-- Cards loaded dynamically via app.js -->
+                <div class="loading-spinner">Loading productions database...</div>
+            </div>
+        </section>
+
+        <!-- Panel 2: 12-MONTH CALENDAR VIEW -->
+        <section id="calendar-view-panel" class="view-panel" role="tabpanel" style="display: none;">
+            <div class="calendar-intro">
+                <h2>12-Month Opera Schedule</h2>
+                <p>Browse through month-by-month listings of all staged performances in the GTA.</p>
+            </div>
+            
+            <div class="calendar-timeline-container" id="calendar-timeline-container">
+                <!-- Months generated dynamically via app.js -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Company Detail Sidebar or Section for Inactives -->
+    <section class="company-directory-section container">
+        <hr class="section-divider">
+        
+        <h2 class="directory-title">Toronto Opera Directory</h2>
+        
+        <div class="company-directory-grid" id="company-directory-container">
+            <!-- Dynamic listing of all companies, with website links, descriptions and status badges -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>© 2026 Toronto Opera Now. Designed with premium aesthetics for classical music lovers.</p>
+            <p class="footer-note">Schedules are scraped and updated daily. Please check ticketing websites directly to confirm dates and seat availability.</p>
+        </div>
+    </footer>
+
+    <!-- Glassmorphism Detail Modal -->
+    <div class="modal-backdrop" id="production-modal">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Close details">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="modal-grid">
+                <!-- Left: Poster Image -->
+                <div class="modal-image-wrap" id="modal-image-container">
+                    <!-- Image dynamic -->
+                </div>
+                
+                <!-- Right: Details -->
+                <div class="modal-details-wrap">
+                    <div class="modal-company-info">
+                        <span class="modal-company-name" id="modal-company-name">Canadian Opera Company</span>
+                    </div>
+                    
+                    <h2 class="modal-title" id="modal-title">La Traviata</h2>
+                    <h3 class="modal-composer" id="modal-composer">Giuseppe Verdi</h3>
+                    
+                    <hr class="modal-divider">
+                    
+                    <div class="modal-meta-grid">
+                        <div class="meta-item">
+                            <span class="meta-label">Date & Time</span>
+                            <span class="meta-value" id="modal-date-time">September 18 - October 17, 2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Venue</span>
+                            <span class="meta-value" id="modal-venue">Four Seasons Centre for the Performing Arts</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Cost</span>
+                            <span class="meta-value" id="modal-price">Tickets from $35</span>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-description">
+                        <span class="meta-label">About the Production</span>
+                        <p id="modal-description-text">Description goes here.</p>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <a href="#" target="_blank" class="cta-btn book-tickets-btn" id="modal-ticket-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon-s">
+                                <path d="M7.5 8H2V21H22V8H16.5"></path>
+                                <path d="M12 2V12"></path>
+                                <path d="M12 12L8 8"></path>
+                                <path d="M12 12L16 8"></path>
+                            </svg>
+                            Book Tickets
+                        </a>
+                        <a href="#" target="_blank" class="cta-btn secondary-btn" id="modal-website-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon-s">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Visit Company Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

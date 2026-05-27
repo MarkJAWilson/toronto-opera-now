@@ -387,7 +387,7 @@ data = {
                     "venue": "TRANZAC Club (Southern Cross Lounge)",
                     "address": "292 Brunswick Ave, Toronto, ON M5S 2M6",
                     "ticketLink": "https://www.operaqueens.ca/",
-                    "imageLink": "https://lh3.googleusercontent.com/sitesv/AA5AbUAjP7rDJZq-N4FAsHgIQBl5kwMGp4l6yvQEwVeQeGpYWsnRYQBkQ-UKsN0nHtrokaMRDSxtpkaiPEuKthEfDMdvkQ0ePOANxPsJFUCbDMVYEiNhHGTcYtg0fJGk18-oFCXXIsNlYISRXXCs-z1Ut1BHWzPoE4vjS2-KfPzY9q_reEB3jt6KAYeEaeM=w16383",
+                    "imageLink": "assets/images/opera_queens.png",
                     "price": "Free / Pay-What-You-Can",
                     "description": "A Pride Month open mic celebrating queer and diverse voices. Hosted by drag diva Tania Smania (Mike Fan), featuring classical vocal highlights, gender-bent opera, and a community open mic segment in the Tranzac's Southern Cross Lounge.",
                     "status": "Upcoming"
@@ -402,7 +402,7 @@ data = {
                     "venue": "TRANZAC Club (Southern Cross Lounge)",
                     "address": "292 Brunswick Ave, Toronto, ON M5S 2M6",
                     "ticketLink": "https://www.operaqueens.ca/",
-                    "imageLink": "https://lh3.googleusercontent.com/sitesv/AA5AbUAjP7rDJZq-N4FAsHgIQBl5kwMGp4l6yvQEwVeQeGpYWsnRYQBkQ-UKsN0nHtrokaMRDSxtpkaiPEuKthEfDMdvkQ0ePOANxPsJFUCbDMVYEiNhHGTcYtg0fJGk18-oFCXXIsNlYISRXXCs-z1Ut1BHWzPoE4vjS2-KfPzY9q_reEB3jt6KAYeEaeM=w16383",
+                    "imageLink": "assets/images/opera_queens.png",
                     "price": "Free / Pay-What-You-Can",
                     "description": "Part of Opéra Queens' historic six-month residency at the Tranzac Club. A casual and lively summer evening showcase of classical song, opera favorites, and community open mic performances in a welcoming queer-friendly space.",
                     "status": "Upcoming"
@@ -417,7 +417,7 @@ data = {
                     "venue": "TRANZAC Club (Southern Cross Lounge)",
                     "address": "292 Brunswick Ave, Toronto, ON M5S 2M6",
                     "ticketLink": "https://www.operaqueens.ca/",
-                    "imageLink": "https://lh3.googleusercontent.com/sitesv/AA5AbUAjP7rDJZq-N4FAsHgIQBl5kwMGp4l6yvQEwVeQeGpYWsnRYQBkQ-UKsN0nHtrokaMRDSxtpkaiPEuKthEfDMdvkQ0ePOANxPsJFUCbDMVYEiNhHGTcYtg0fJGk18-oFCXXIsNlYISRXXCs-z1Ut1BHWzPoE4vjS2-KfPzY9q_reEB3jt6KAYeEaeM=w16383",
+                    "imageLink": "assets/images/opera_queens.png",
                     "price": "Free / Pay-What-You-Can",
                     "description": "Opéra Queens' monthly residency performance at the Tranzac Club. Drag-infused and gender-bent operatic performance and community open mic, bringing classical vocal music to a relaxed, inclusive neighborhood venue.",
                     "status": "Upcoming"
@@ -432,7 +432,7 @@ data = {
                     "venue": "TRANZAC Club (Southern Cross Lounge)",
                     "address": "292 Brunswick Ave, Toronto, ON M5S 2M6",
                     "ticketLink": "https://www.operaqueens.ca/",
-                    "imageLink": "https://lh3.googleusercontent.com/sitesv/AA5AbUAjP7rDJZq-N4FAsHgIQBl5kwMGp4l6yvQEwVeQeGpYWsnRYQBkQ-UKsN0nHtrokaMRDSxtpkaiPEuKthEfDMdvkQ0ePOANxPsJFUCbDMVYEiNhHGTcYtg0fJGk18-oFCXXIsNlYISRXXCs-z1Ut1BHWzPoE4vjS2-KfPzY9q_reEB3jt6KAYeEaeM=w16383",
+                    "imageLink": "assets/images/opera_queens.png",
                     "price": "Free / Pay-What-You-Can",
                     "description": "Concluding the six-month Tranzac residency with a Latin Night theme, featuring classical vocal works by Spanish and Latin American composers, drag-opera segments, and community open mic slots.",
                     "status": "Upcoming"

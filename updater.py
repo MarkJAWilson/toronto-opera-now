@@ -531,6 +531,71 @@ def scrape_tsm():
         }
     ]
 
+def scrape_opera_queens():
+    print("Scraping Opéra Queens...")
+    return [
+        {
+            "title": "Proud Voices 2.0",
+            "composer": "Various / Operatic Highlights",
+            "date": "June 6, 2026",
+            "time": "5:00 PM - 7:00 PM",
+            "isoStart": "2026-06-06T17:00:00",
+            "isoEnd": "2026-06-06T19:00:00",
+            "venue": "TRANZAC Club (Southern Cross Lounge)",
+            "address": "292 Brunswick Ave, Toronto, ON M5S 2M6",
+            "ticketLink": "https://www.operaqueens.ca/",
+            "imageLink": "https://lh3.googleusercontent.com/sitesv/AA5AbUAjP7rDJZq-N4FAsHgIQBl5kwMGp4l6yvQEwVeQeGpYWsnRYQBkQ-UKsN0nHtrokaMRDSxtpkaiPEuKthEfDMdvkQ0ePOANxPsJFUCbDMVYEiNhHGTcYtg0fJGk18-oFCXXIsNlYISRXXCs-z1Ut1BHWzPoE4vjS2-KfPzY9q_reEB3jt6KAYeEaeM=w16383",
+            "price": "Free / Pay-What-You-Can",
+            "description": "A Pride Month open mic celebrating queer and diverse voices. Hosted by drag diva Tania Smania (Mike Fan), featuring classical vocal highlights, gender-bent opera, and a community open mic segment in the Tranzac's Southern Cross Lounge.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Summer Song Café",
+            "composer": "Various / Operatic Highlights",
+            "date": "July 4, 2026",
+            "time": "5:00 PM - 7:00 PM",
+            "isoStart": "2026-07-04T17:00:00",
+            "isoEnd": "2026-07-04T19:00:00",
+            "venue": "TRANZAC Club (Southern Cross Lounge)",
+            "address": "292 Brunswick Ave, Toronto, ON M5S 2M6",
+            "ticketLink": "https://www.operaqueens.ca/",
+            "imageLink": "https://lh3.googleusercontent.com/sitesv/AA5AbUAjP7rDJZq-N4FAsHgIQBl5kwMGp4l6yvQEwVeQeGpYWsnRYQBkQ-UKsN0nHtrokaMRDSxtpkaiPEuKthEfDMdvkQ0ePOANxPsJFUCbDMVYEiNhHGTcYtg0fJGk18-oFCXXIsNlYISRXXCs-z1Ut1BHWzPoE4vjS2-KfPzY9q_reEB3jt6KAYeEaeM=w16383",
+            "price": "Free / Pay-What-You-Can",
+            "description": "Part of Opéra Queens' historic six-month residency at the Tranzac Club. A casual and lively summer evening showcase of classical song, opera favorites, and community open mic performances in a welcoming queer-friendly space.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Opera Sustenida",
+            "composer": "Various / Operatic Highlights",
+            "date": "August 1, 2026",
+            "time": "5:00 PM - 7:00 PM",
+            "isoStart": "2026-08-01T17:00:00",
+            "isoEnd": "2026-08-01T19:00:00",
+            "venue": "TRANZAC Club (Southern Cross Lounge)",
+            "address": "292 Brunswick Ave, Toronto, ON M5S 2M6",
+            "ticketLink": "https://www.operaqueens.ca/",
+            "imageLink": "https://lh3.googleusercontent.com/sitesv/AA5AbUAjP7rDJZq-N4FAsHgIQBl5kwMGp4l6yvQEwVeQeGpYWsnRYQBkQ-UKsN0nHtrokaMRDSxtpkaiPEuKthEfDMdvkQ0ePOANxPsJFUCbDMVYEiNhHGTcYtg0fJGk18-oFCXXIsNlYISRXXCs-z1Ut1BHWzPoE4vjS2-KfPzY9q_reEB3jt6KAYeEaeM=w16383",
+            "price": "Free / Pay-What-You-Can",
+            "description": "Opéra Queens' monthly residency performance at the Tranzac Club. Drag-infused and gender-bent operatic performance and community open mic, bringing classical vocal music to a relaxed, inclusive neighborhood venue.",
+            "status": "Upcoming"
+                },
+                {
+                    "title": "Latin Night",
+                    "composer": "Various / Operatic Highlights",
+                    "date": "September 5, 2026",
+                    "time": "5:00 PM - 7:00 PM",
+                    "isoStart": "2026-09-05T17:00:00",
+                    "isoEnd": "2026-09-05T19:00:00",
+                    "venue": "TRANZAC Club (Southern Cross Lounge)",
+                    "address": "292 Brunswick Ave, Toronto, ON M5S 2M6",
+                    "ticketLink": "https://www.operaqueens.ca/",
+                    "imageLink": "https://lh3.googleusercontent.com/sitesv/AA5AbUAjP7rDJZq-N4FAsHgIQBl5kwMGp4l6yvQEwVeQeGpYWsnRYQBkQ-UKsN0nHtrokaMRDSxtpkaiPEuKthEfDMdvkQ0ePOANxPsJFUCbDMVYEiNhHGTcYtg0fJGk18-oFCXXIsNlYISRXXCs-z1Ut1BHWzPoE4vjS2-KfPzY9q_reEB3jt6KAYeEaeM=w16383",
+                    "price": "Free / Pay-What-You-Can",
+                    "description": "Concluding the six-month Tranzac residency with a Latin Night theme, featuring classical vocal works by Spanish and Latin American composers, drag-opera segments, and community open mic slots.",
+                    "status": "Upcoming"
+                }
+            ]
+
 # ==============================================================================
 # MAIN ENGINE
 # ==============================================================================
@@ -623,6 +688,7 @@ def main():
         "Canadian Opera Company": scrape_coc,
         "Opera 5": scrape_opera5,
         "Opera Atelier": scrape_opera_atelier,
+        "Opéra Queens": scrape_opera_queens,
         "Opera Revue": scrape_opera_revue,
         "Southern Ontario Lyric Opera": scrape_solo,
         "Summer Opera Lyric Theatre": scrape_solt,

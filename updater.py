@@ -544,7 +544,7 @@ def scrape_opera_by_request():
             "venue": "Humbercrest United Church",
             "address": "16 Baby Point Rd, York, ON M6S 2G3",
             "ticketLink": "https://operabyrequest.ca/",
-            "imageLink": "assets/images/logo.png",
+            "imageLink": "assets/images/opera_by_request.png",
             "price": "Tickets from $25",
             "description": "Richard Wagner's monumental opera of love, passion, and death, performed in concert format with piano accompaniment. Directed and conducted from the piano by William Shookhoff.",
             "status": "Passed"
@@ -559,7 +559,7 @@ def scrape_opera_by_request():
             "venue": "Toronto (Venue TBA)",
             "address": "Toronto, ON",
             "ticketLink": "https://operabyrequest.ca/",
-            "imageLink": "assets/images/logo.png",
+            "imageLink": "assets/images/opera_by_request.png",
             "price": "Tickets TBA",
             "description": "World Premiere. Commissioned to commemorate Opera by Request's 20th anniversary, 'Laura—A Canadian Tragedy' tells the story of Canadian heroine Laura Secord. With music by Chiara Urban and libretto by Jessica Spurrell, the opera explores her struggles as an impoverished and unappreciated figure in post-1812 Canada.",
             "status": "Upcoming"

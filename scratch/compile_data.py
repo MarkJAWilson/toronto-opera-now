@@ -390,7 +390,7 @@ data = {
                     "venue": "Toronto (Venue TBA)",
                     "address": "Toronto, ON",
                     "ticketLink": "https://operabyrequest.ca/",
-                    "imageLink": "assets/images/opera_by_request.png",
+                    "imageLink": "assets/images/laura.jpg",
                     "price": "Tickets TBA",
                     "description": "World Premiere. Commissioned to commemorate Opera by Request's 20th anniversary, 'Laura—A Canadian Tragedy' tells the story of Canadian heroine Laura Secord. With music by Chiara Urban and libretto by Jessica Spurrell, the opera explores her struggles as an impoverished and unappreciated figure in post-1812 Canada.",
                     "status": "Upcoming"

@@ -531,6 +531,41 @@ def scrape_tsm():
         }
     ]
 
+def scrape_opera_by_request():
+    print("Scraping Opera by Request...")
+    return [
+        {
+            "title": "Tristan und Isolde",
+            "composer": "Richard Wagner",
+            "date": "May 3, 2026",
+            "time": "7:30 PM",
+            "isoStart": "2026-05-03T19:30:00",
+            "isoEnd": "2026-05-03T22:30:00",
+            "venue": "Humbercrest United Church",
+            "address": "16 Baby Point Rd, York, ON M6S 2G3",
+            "ticketLink": "https://operabyrequest.ca/",
+            "imageLink": "assets/images/logo.png",
+            "price": "Tickets from $25",
+            "description": "Richard Wagner's monumental opera of love, passion, and death, performed in concert format with piano accompaniment. Directed and conducted from the piano by William Shookhoff.",
+            "status": "Passed"
+        },
+        {
+            "title": "Laura—A Canadian Tragedy",
+            "composer": "Chiara Urban / Libretto by Jessica Spurrell",
+            "date": "March 2027",
+            "time": "TBA (20th Anniversary Commission)",
+            "isoStart": "2027-03-12T19:30:00",
+            "isoEnd": "2027-03-12T22:00:00",
+            "venue": "Toronto (Venue TBA)",
+            "address": "Toronto, ON",
+            "ticketLink": "https://operabyrequest.ca/",
+            "imageLink": "assets/images/logo.png",
+            "price": "Tickets TBA",
+            "description": "World Premiere. Commissioned to commemorate Opera by Request's 20th anniversary, 'Laura—A Canadian Tragedy' tells the story of Canadian heroine Laura Secord. With music by Chiara Urban and libretto by Jessica Spurrell, the opera explores her struggles as an impoverished and unappreciated figure in post-1812 Canada.",
+            "status": "Upcoming"
+        }
+    ]
+
 def scrape_opera_queens():
     print("Scraping Opéra Queens...")
     return [
@@ -688,6 +723,7 @@ def main():
         "Canadian Opera Company": scrape_coc,
         "Opera 5": scrape_opera5,
         "Opera Atelier": scrape_opera_atelier,
+        "Opera by Request": scrape_opera_by_request,
         "Opéra Queens": scrape_opera_queens,
         "Opera Revue": scrape_opera_revue,
         "Southern Ontario Lyric Opera": scrape_solo,

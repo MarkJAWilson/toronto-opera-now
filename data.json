@@ -349,6 +349,48 @@
       ]
     },
     {
+      "name": "Opera by Request",
+      "abbreviation": "OBR",
+      "website": "https://operabyrequest.ca/",
+      "status": "Active",
+      "description": "Founded in 2007 by pianist and music director William Shookhoff, Opera by Request is a unique, artist-driven chamber opera company in Toronto. Repertoire is chosen and co-produced by the participating singers, providing emerging and established artists with the opportunity to study and perform complete operatic roles in concert format with piano accompaniment.",
+      "socials": {
+        "facebook": "https://www.facebook.com/operabyrequest"
+      },
+      "productions": [
+        {
+          "title": "Tristan und Isolde",
+          "composer": "Richard Wagner",
+          "date": "May 3, 2026",
+          "time": "7:30 PM",
+          "isoStart": "2026-05-03T19:30:00",
+          "isoEnd": "2026-05-03T22:30:00",
+          "venue": "Humbercrest United Church",
+          "address": "16 Baby Point Rd, York, ON M6S 2G3",
+          "ticketLink": "https://operabyrequest.ca/",
+          "imageLink": "assets/images/logo.png",
+          "price": "Tickets from $25",
+          "description": "Richard Wagner's monumental opera of love, passion, and death, performed in concert format with piano accompaniment. Directed and conducted from the piano by William Shookhoff.",
+          "status": "Passed"
+        },
+        {
+          "title": "Laura—A Canadian Tragedy",
+          "composer": "Chiara Urban / Libretto by Jessica Spurrell",
+          "date": "March 2027",
+          "time": "TBA (20th Anniversary Commission)",
+          "isoStart": "2027-03-12T19:30:00",
+          "isoEnd": "2027-03-12T22:00:00",
+          "venue": "Toronto (Venue TBA)",
+          "address": "Toronto, ON",
+          "ticketLink": "https://operabyrequest.ca/",
+          "imageLink": "assets/images/logo.png",
+          "price": "Tickets TBA",
+          "description": "World Premiere. Commissioned to commemorate Opera by Request's 20th anniversary, 'Laura—A Canadian Tragedy' tells the story of Canadian heroine Laura Secord. With music by Chiara Urban and libretto by Jessica Spurrell, the opera explores her struggles as an impoverished and unappreciated figure in post-1812 Canada.",
+          "status": "Upcoming"
+        }
+      ]
+    },
+    {
       "name": "Opera by the Glass",
       "abbreviation": "OBTG",
       "website": "https://www.instagram.com/operabytheglass/",

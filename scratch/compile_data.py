@@ -715,7 +715,7 @@ data = {
                     "venue": "The Redwood Theatre",
                     "address": "1300 Gerrard St E, Toronto, ON M4L 1Y7",
                     "ticketLink": "https://www.theredwoodtheatre.com/event-details/don-giovanni",
-                    "imageLink": "assets/images/logo.png",
+                    "imageLink": "assets/images/don_giovanni.jpg",
                     "price": "Pay-What-You-Can (Suggested $20)",
                     "description": "Benevolence Opera Project and Redwood Theatre present...\nMozart's Don Giovanni\nA Night to benefit the Redwood Women's Shelter\nThis year's opera is going to be outstanding!\nDoors open at 7pm. Show begins at 8pm.\nMingling and cocktail reception starts at 7pm",
                     "status": "Passed"

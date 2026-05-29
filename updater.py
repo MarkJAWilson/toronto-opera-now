@@ -609,7 +609,7 @@ def scrape_redwood():
                 "venue": venue,
                 "address": address,
                 "ticketLink": link,
-                "imageLink": "assets/images/opera_303.jpg" if "Opera 303" in title else "assets/images/logo.png",
+                "imageLink": "assets/images/opera_303.jpg" if "Opera 303" in title else "assets/images/don_giovanni.jpg" if "Don Giovanni" in title else "assets/images/logo.png",
                 "price": price_str,
                 "description": description,
                 "status": status

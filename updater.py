@@ -503,6 +503,9 @@ def scrape_redwood():
         if " | The Redwood" in title:
             title = title.replace(" | The Redwood", "")
             
+        if "don giovanni" in title.lower():
+            continue
+            
         # Get description
         desc = ""
         meta_desc = detail_soup.find('meta', attrs={'name': 'description'})

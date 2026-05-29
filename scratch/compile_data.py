@@ -705,21 +705,7 @@ data = {
                     "description": "Benevolence Opera Project and Redwood Theatre present...\nTo be announced. \nThis will be one of the classic operas. \nStay tuned. \nDoors open at 7pm. Show begins at 8pm.\nMingling and cocktail reception starts at 7pm",
                     "status": "Upcoming"
                 },
-                {
-                    "title": "Don Giovanni",
-                    "composer": "Wolfgang Amadeus Mozart",
-                    "date": "May 22, 2026",
-                    "time": "7:00 PM",
-                    "isoStart": "2026-05-22T19:00:00",
-                    "isoEnd": "2026-05-22T22:30:00",
-                    "venue": "The Redwood Theatre",
-                    "address": "1300 Gerrard St E, Toronto, ON M4L 1Y7",
-                    "ticketLink": "https://www.theredwoodtheatre.com/event-details/don-giovanni",
-                    "imageLink": "assets/images/don_giovanni.jpg",
-                    "price": "Pay-What-You-Can (Suggested $20)",
-                    "description": "Benevolence Opera Project and Redwood Theatre present...\nMozart's Don Giovanni\nA Night to benefit the Redwood Women's Shelter\nThis year's opera is going to be outstanding!\nDoors open at 7pm. Show begins at 8pm.\nMingling and cocktail reception starts at 7pm",
-                    "status": "Passed"
-                },
+
                 {
                     "title": "Canuck Cantatas - Friday 8pm",
                     "composer": "Various Canadian Composers",

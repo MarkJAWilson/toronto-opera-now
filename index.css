@@ -488,7 +488,11 @@ button {
 .card-img-wrap img[src*="Toronto+Opera+Festival"],
 .card-img-wrap img[src*="Toronto%20Opera%20Festival"],
 .card-img-wrap img[src*="Toronto Opera Festival"],
-.card-img-wrap img[src*="76c5f834-b81a-4593-a1ec-3a56fc73f5e7"] {
+.card-img-wrap img[src*="76c5f834-b81a-4593-a1ec-3a56fc73f5e7"],
+.card-img-wrap img[src*="73f7a236-661c-4538-9b6b-c035aa17cb7f"],
+.card-img-wrap img[src*="414072b8-af94-4fa8-b885-1eaf3a3bf86a"],
+.card-img-wrap img[src*="Season+Announcement+Posters+Final"],
+.card-img-wrap img[src*="Season%20Announcement%20Posters%20Final"] {
     object-fit: contain;
     padding: 16px;
     background: rgba(255, 255, 255, 0.01);
@@ -955,7 +959,11 @@ button {
 .modal-image-wrap img[src*="Toronto+Opera+Festival"],
 .modal-image-wrap img[src*="Toronto%20Opera%20Festival"],
 .modal-image-wrap img[src*="Toronto Opera Festival"],
-.modal-image-wrap img[src*="76c5f834-b81a-4593-a1ec-3a56fc73f5e7"] {
+.modal-image-wrap img[src*="76c5f834-b81a-4593-a1ec-3a56fc73f5e7"],
+.modal-image-wrap img[src*="73f7a236-661c-4538-9b6b-c035aa17cb7f"],
+.modal-image-wrap img[src*="414072b8-af94-4fa8-b885-1eaf3a3bf86a"],
+.modal-image-wrap img[src*="Season+Announcement+Posters+Final"],
+.modal-image-wrap img[src*="Season%20Announcement%20Posters%20Final"] {
     object-fit: contain;
     padding: 32px;
     background: rgba(255, 255, 255, 0.01);

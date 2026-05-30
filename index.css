@@ -476,6 +476,18 @@ button {
     transform: scale(1.05);
 }
 
+/* Custom fits for square logos/posters in production cards */
+.card-img-wrap img[src*="opera_by_request.png"],
+.card-img-wrap img[src*="opera_queens.png"],
+.card-img-wrap img[src*="Opera-Pub-Logo-AtG-Red"],
+.card-img-wrap img[src*="CCOC_Full_NoDate.png"],
+.card-img-wrap img[src*="cropped-solo_red_banner.png"],
+.card-img-wrap img[src*="10-Days-in-Madhouse"] {
+    object-fit: contain;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.01);
+}
+
 .card-company-tag {
     position: absolute;
     top: 16px;
@@ -923,6 +935,18 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Custom fits for square logos/posters in detail modals */
+.modal-image-wrap img[src*="opera_by_request.png"],
+.modal-image-wrap img[src*="opera_queens.png"],
+.modal-image-wrap img[src*="Opera-Pub-Logo-AtG-Red"],
+.modal-image-wrap img[src*="CCOC_Full_NoDate.png"],
+.modal-image-wrap img[src*="cropped-solo_red_banner.png"],
+.modal-image-wrap img[src*="10-Days-in-Madhouse"] {
+    object-fit: contain;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.01);
 }
 
 .modal-details-wrap {

@@ -485,7 +485,10 @@ button {
 .card-img-wrap img[src*="10-Days-in-Madhouse"],
 .card-img-wrap img[src*="laura.jpg"],
 .card-img-wrap img[src*="logo.png"],
-.card-img-wrap img[src*="Toronto+Opera+Festival"] {
+.card-img-wrap img[src*="Toronto+Opera+Festival"],
+.card-img-wrap img[src*="Toronto%20Opera%20Festival"],
+.card-img-wrap img[src*="Toronto Opera Festival"],
+.card-img-wrap img[src*="76c5f834-b81a-4593-a1ec-3a56fc73f5e7"] {
     object-fit: contain;
     padding: 16px;
     background: rgba(255, 255, 255, 0.01);
@@ -949,7 +952,10 @@ button {
 .modal-image-wrap img[src*="10-Days-in-Madhouse"],
 .modal-image-wrap img[src*="laura.jpg"],
 .modal-image-wrap img[src*="logo.png"],
-.modal-image-wrap img[src*="Toronto+Opera+Festival"] {
+.modal-image-wrap img[src*="Toronto+Opera+Festival"],
+.modal-image-wrap img[src*="Toronto%20Opera%20Festival"],
+.modal-image-wrap img[src*="Toronto Opera Festival"],
+.modal-image-wrap img[src*="76c5f834-b81a-4593-a1ec-3a56fc73f5e7"] {
     object-fit: contain;
     padding: 32px;
     background: rgba(255, 255, 255, 0.01);

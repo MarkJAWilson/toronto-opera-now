@@ -477,6 +477,7 @@ button {
 }
 
 /* Custom fits for square logos/posters in production cards */
+.card-img-wrap img[src*="confluence.png"],
 .card-img-wrap img[src*="opera_by_request.png"],
 .card-img-wrap img[src*="opera_queens.png"],
 .card-img-wrap img[src*="Opera-Pub-Logo-AtG-Red"],
@@ -948,6 +949,7 @@ button {
 }
 
 /* Custom fits for square logos/posters in detail modals */
+.modal-image-wrap img[src*="confluence.png"],
 .modal-image-wrap img[src*="opera_by_request.png"],
 .modal-image-wrap img[src*="opera_queens.png"],
 .modal-image-wrap img[src*="Opera-Pub-Logo-AtG-Red"],

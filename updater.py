@@ -660,6 +660,41 @@ def scrape_opera_revue():
         }
     ]
 
+def scrape_confluence():
+    print("Scraping Confluence Concerts...")
+    return [
+        {
+            "title": "Canadian Art Song Project",
+            "composer": "Various Female Canadian Composers",
+            "date": "March 5 & 6, 2027",
+            "time": "7:30 PM",
+            "isoStart": "2027-03-05T19:30:00",
+            "isoEnd": "2027-03-06T21:30:00",
+            "venue": "Heliconian Hall",
+            "address": "35 Hazelton Ave, Toronto, ON M5R 2E3",
+            "ticketLink": "https://www.confluenceconcerts.ca/",
+            "imageLink": "assets/images/logo.png",
+            "price": "Tickets: $35 / PWYC",
+            "description": "Co-presented with the Canadian Art Song Project (CASP). A beautiful recital program featuring works by female Canadian composers, performed by soprano Jonelle Sills and baritone Jesse Blumberg, accompanied by pianists Helen Becqué and Steven Philcox.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Metal Mozart",
+            "composer": "Wolfgang Amadeus Mozart",
+            "date": "April 17 & 18, 2027",
+            "time": "April 17 at 8:00 PM, April 18 at 2:00 PM",
+            "isoStart": "2027-04-17T20:00:00",
+            "isoEnd": "2027-04-18T16:00:00",
+            "venue": "Heliconian Hall",
+            "address": "35 Hazelton Ave, Toronto, ON M5R 2E3",
+            "ticketLink": "https://www.confluenceconcerts.ca/",
+            "imageLink": "assets/images/logo.png",
+            "price": "Tickets: $35 / PWYC",
+            "description": "Curated by Teiya Kasahara. Audiences can rock out to your favourite classical bangers! Metal Mozart features hardcore instrumentals and operatic grit to explore the concept of a rock opera, blending Mozart's classical masterpieces with heavy metal.",
+            "status": "Upcoming"
+        }
+    ]
+
 def scrape_tsm():
     print("Scraping Toronto Summer Music...")
     return [
@@ -676,6 +711,36 @@ def scrape_tsm():
             "imageLink": "assets/images/les_arts_florissants.jpg",
             "price": "Tickets: $30 - $120",
             "description": "Toronto Summer Music Opening Night. Under the direction of William Christie, the legendary early music ensemble Les Arts Florissants performs a staged double-bill of Charpentier's baroque masterpieces: 'La descente d'Orphée aux enfers' and the chamber opera 'Les arts florissants'. Followed by a celebratory champagne reception.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Sasha Cooke & Warren Jones: Of Thee I Sing",
+            "composer": "Various / Recital (Copland, Barber, Weill, Sondheim, Gershwin, Granados)",
+            "date": "July 13, 2026",
+            "time": "7:30 PM - 9:30 PM",
+            "isoStart": "2026-07-13T19:30:00",
+            "isoEnd": "2026-07-13T21:30:00",
+            "venue": "MacMillan Theatre, Edward Johnson Building",
+            "address": "80 Queen's Park, Toronto, ON M5S 2C5",
+            "ticketLink": "https://torontosummermusic.com/event/cooke-jones-of-thee-i-sing/",
+            "imageLink": "assets/images/logo.png",
+            "price": "Tickets: $30 - $120",
+            "description": "Celebrated mezzo-soprano Sasha Cooke (Art of Song Mentor) and pianist Warren Jones perform 'Of Thee I Sing,' a recital program exploring themes of hope and connection through works by American composers (Copland, Barber, Weill, Sondheim, Gershwin) and selections from Granados's Tonadillas.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Golden Age: Erin Morley & Lawrence Brownlee",
+            "composer": "Various / Operatic Arias & Duets",
+            "date": "July 16, 2026",
+            "time": "7:30 PM - 9:30 PM",
+            "isoStart": "2026-07-16T19:30:00",
+            "isoEnd": "2026-07-16T21:30:00",
+            "venue": "Koerner Hall",
+            "address": "273 Bloor St W, Toronto, ON M5S 1W2",
+            "ticketLink": "https://torontosummermusic.com/event/golden-age-recital/",
+            "imageLink": "assets/images/logo.png",
+            "price": "Tickets: $30 - $120",
+            "description": "Met Opera stars Erin Morley (soprano) and Lawrence Brownlee (tenor), accompanied by pianist Malcolm Martineau, perform their celebrated 'Golden Age' program, featuring a selection of 19th-century French and Italian opera arias and duets.",
             "status": "Upcoming"
         }
     ]
@@ -870,6 +935,7 @@ def main():
         "Apocryphonia": scrape_apocryphonia,
         "Canadian Children's Opera Company": scrape_ccoc,
         "Canadian Opera Company": scrape_coc,
+        "Confluence Concerts": scrape_confluence,
         "Opera 5": scrape_opera5,
         "Opera Atelier": scrape_opera_atelier,
         "Opera by Request": scrape_opera_by_request,

@@ -36,6 +36,7 @@ const calendarTimelineContainer = document.getElementById("calendar-timeline-con
 const companyDirectoryContainer = document.getElementById("company-directory-container");
 
 const btnGridView = document.getElementById("btn-grid-view");
+const btnDirectoryView = document.getElementById("btn-directory-view");
 const btnCalendarView = document.getElementById("btn-calendar-view");
 const gridViewPanel = document.getElementById("grid-view-panel");
 const calendarViewPanel = document.getElementById("calendar-view-panel");
@@ -103,6 +104,14 @@ function setupEventListeners() {
 
     // View toggles
     btnGridView.addEventListener("click", () => switchView("grid"));
+    if (btnDirectoryView) {
+        btnDirectoryView.addEventListener("click", () => {
+            const dirSection = document.querySelector(".company-directory-section");
+            if (dirSection) {
+                dirSection.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    }
     btnCalendarView.addEventListener("click", () => switchView("calendar"));
 
     // Clear filter buttons

@@ -723,7 +723,7 @@ def scrape_tsm():
             "venue": "MacMillan Theatre, Edward Johnson Building",
             "address": "80 Queen's Park, Toronto, ON M5S 2C5",
             "ticketLink": "https://torontosummermusic.com/event/cooke-jones-of-thee-i-sing/",
-            "imageLink": "assets/images/logo.png",
+            "imageLink": "https://torontosummermusic.com/wp-content/uploads/July-13_-Sasha-Cooke.png",
             "price": "Tickets: $30 - $120",
             "description": "Celebrated mezzo-soprano Sasha Cooke (Art of Song Mentor) and pianist Warren Jones perform 'Of Thee I Sing,' a recital program exploring themes of hope and connection through works by American composers (Copland, Barber, Weill, Sondheim, Gershwin) and selections from Granados's Tonadillas.",
             "status": "Upcoming"
@@ -738,7 +738,7 @@ def scrape_tsm():
             "venue": "Koerner Hall",
             "address": "273 Bloor St W, Toronto, ON M5S 1W2",
             "ticketLink": "https://torontosummermusic.com/event/golden-age-recital/",
-            "imageLink": "assets/images/logo.png",
+            "imageLink": "https://torontosummermusic.com/wp-content/uploads/July-16_-Golden-Age.png",
             "price": "Tickets: $30 - $120",
             "description": "Met Opera stars Erin Morley (soprano) and Lawrence Brownlee (tenor), accompanied by pianist Malcolm Martineau, perform their celebrated 'Golden Age' program, featuring a selection of 19th-century French and Italian opera arias and duets.",
             "status": "Upcoming"

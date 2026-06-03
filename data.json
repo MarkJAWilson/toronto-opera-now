@@ -31,6 +31,31 @@
       ]
     },
     {
+      "name": "Alliance for Canadian Musicals",
+      "abbreviation": "ACM",
+      "website": "https://allianceforcanadianmusicals.ca/",
+      "status": "Active",
+      "description": "The Alliance for Canadian Musicals is an organization dedicated to the development, production, and promotion of Canadian musical theatre, showcasing original works and Canadian talent.",
+      "socials": {},
+      "productions": [
+        {
+          "title": "The Wounds of Love and Other Gifts",
+          "composer": "Bruce Dow",
+          "date": "June 30 - July 12, 2026",
+          "time": "See details",
+          "isoStart": "2026-06-30T19:30:00",
+          "isoEnd": "2026-07-12T21:30:00",
+          "venue": "Theatre Passe-Muraille",
+          "address": "16 Ryerson Ave, Toronto, ON M5T 2R2",
+          "ticketLink": "https://fringetoronto.com/",
+          "imageLink": "assets/images/wounds_of_love.png",
+          "price": "Tickets: $15",
+          "description": "An intimate music-theatre meditation on love, sacrifice, and the cost of giving, inspired by the words of Oscar Wilde. Written, composed, and directed by Bruce Dow.",
+          "status": "Upcoming"
+        }
+      ]
+    },
+    {
       "name": "Amplified Opera",
       "abbreviation": "Amplified",
       "website": "https://www.amplifiedopera.com/",
@@ -933,6 +958,31 @@
           "imageLink": "https://torontosummermusic.com/wp-content/uploads/July-16_-Golden-Age.png",
           "price": "Tickets: $30 - $120",
           "description": "Met Opera stars Erin Morley (soprano) and Lawrence Brownlee (tenor), accompanied by pianist Malcolm Martineau, perform their celebrated 'Golden Age' program, featuring a selection of 19th-century French and Italian opera arias and duets.",
+          "status": "Upcoming"
+        }
+      ]
+    },
+    {
+      "name": "Ubu Opera",
+      "abbreviation": "Ubu",
+      "website": "https://www.ubuopera.com/",
+      "status": "Active",
+      "description": "Ubu Opera is a Toronto-based collective dedicated to creating music theatre that fuses classical chamber music with physical theatre.",
+      "socials": {},
+      "productions": [
+        {
+          "title": "Songs for Moby Dick",
+          "composer": "Peter Thompson",
+          "date": "June 30 - July 12, 2026",
+          "time": "See details",
+          "isoStart": "2026-06-30T15:45:00",
+          "isoEnd": "2026-07-12T17:00:00",
+          "venue": "Theatre Passe-Muraille",
+          "address": "16 Ryerson Ave, Toronto, ON M5T 2R2",
+          "ticketLink": "https://fringetoronto.com/",
+          "imageLink": "assets/images/moby_dick.png",
+          "price": "Tickets: $15",
+          "description": "A fully staged, movement-based operatic adaptation of Herman Melville's novel, exploring themes of obsession, violence, beauty, and nature. Directed by Adam Paolozza, featuring Peter Thompson as Ishmael and Dr. Erika Reiman at the piano.",
           "status": "Upcoming"
         }
       ]

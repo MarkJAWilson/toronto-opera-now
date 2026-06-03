@@ -845,6 +845,46 @@ def scrape_opera_queens():
                 }
             ]
 
+def scrape_acm():
+    print("Scraping Alliance for Canadian Musicals...")
+    return [
+        {
+            "title": "The Wounds of Love and Other Gifts",
+            "composer": "Bruce Dow",
+            "date": "June 30 - July 12, 2026",
+            "time": "See details",
+            "isoStart": "2026-06-30T19:30:00",
+            "isoEnd": "2026-07-12T21:30:00",
+            "venue": "Theatre Passe-Muraille",
+            "address": "16 Ryerson Ave, Toronto, ON M5T 2R2",
+            "ticketLink": "https://fringetoronto.com/",
+            "imageLink": "assets/images/wounds_of_love.png",
+            "price": "Tickets: $15",
+            "description": "An intimate music-theatre meditation on love, sacrifice, and the cost of giving, inspired by the words of Oscar Wilde. Written, composed, and directed by Bruce Dow.",
+            "status": "Upcoming"
+        }
+    ]
+
+def scrape_ubu():
+    print("Scraping Ubu Opera...")
+    return [
+        {
+            "title": "Songs for Moby Dick",
+            "composer": "Peter Thompson",
+            "date": "June 30 - July 12, 2026",
+            "time": "See details",
+            "isoStart": "2026-06-30T15:45:00",
+            "isoEnd": "2026-07-12T17:00:00",
+            "venue": "Theatre Passe-Muraille",
+            "address": "16 Ryerson Ave, Toronto, ON M5T 2R2",
+            "ticketLink": "https://fringetoronto.com/",
+            "imageLink": "assets/images/moby_dick.png",
+            "price": "Tickets: $15",
+            "description": "A fully staged, movement-based operatic adaptation of Herman Melville's novel, exploring themes of obsession, violence, beauty, and nature. Directed by Adam Paolozza, featuring Peter Thompson as Ishmael and Dr. Erika Reiman at the piano.",
+            "status": "Upcoming"
+        }
+    ]
+
 # ==============================================================================
 # MAIN ENGINE
 # ==============================================================================
@@ -932,6 +972,7 @@ def main():
         
     scrapers = {
         "Against the Grain Theatre": scrape_atg,
+        "Alliance for Canadian Musicals": scrape_acm,
         "Apocryphonia": scrape_apocryphonia,
         "Canadian Children's Opera Company": scrape_ccoc,
         "Canadian Opera Company": scrape_coc,
@@ -948,6 +989,7 @@ def main():
         "The Redwood Theatre": scrape_redwood,
         "Toronto City Opera": scrape_tco,
         "Toronto Summer Music": scrape_tsm,
+        "Ubu Opera": scrape_ubu,
         "University of Toronto Opera": scrape_uoft_opera
     }
     

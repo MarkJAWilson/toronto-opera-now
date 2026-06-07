@@ -885,6 +885,76 @@ def scrape_ubu():
         }
     ]
 
+def scrape_opera_york():
+    print("Scraping Opera York...")
+    return [
+        {
+            "title": "Pirates of Penzance",
+            "composer": "Arthur Sullivan",
+            "date": "July 16 & 17, 2026",
+            "time": "7:30 PM",
+            "isoStart": "2026-07-16T19:30:00",
+            "isoEnd": "2026-07-17T22:00:00",
+            "venue": "Richmond Hill Centre for the Performing Arts",
+            "address": "10268 Yonge St, Richmond Hill, ON L4C 3B7",
+            "ticketLink": "https://www.rhcentre.ca/Online/article/OperaYorkPiratesofPenzance",
+            "imageLink": "https://operayork.com/wp-content/uploads/2026/05/penzance-banner.png",
+            "price": "Tickets: $35 & $40, Seniors $30",
+            "description": "Gilbert & Sullivan's classic comic opera about Frederic, a pirate apprentice released on his 21st birthday who discovers he was born on a leap year (February 29) and is bound to serve them until his actual 21st birthday. A full production featuring chorus, orchestra, and surtitles, directed by Penelope Cookson with music direction by Geoffrey Butler.",
+            "status": "Upcoming"
+        }
+    ]
+
+def scrape_nst():
+    print("Scraping No Strings Theatre...")
+    return [
+        {
+            "title": "Hands Together for Opera",
+            "composer": "Various / Operatic Highlights",
+            "date": "July 18, 2026",
+            "time": "7:00 PM - 8:15 PM",
+            "isoStart": "2026-07-18T19:00:00",
+            "isoEnd": "2026-07-18T20:15:00",
+            "venue": "Remenyi House of Music",
+            "address": "109 Vanderhoof Ave Suite 15, East York, ON M4G 2H7",
+            "ticketLink": "https://www.nostringstheatre.com/event-details/summer-soundscape-concert-series-2",
+            "imageLink": "assets/images/hands_together_for_opera.png",
+            "price": "Tickets: $25",
+            "description": "Part of the Summer Soundscape Concert Series. Featuring acclaimed pianists Greg Millar and Lisa Raposa Millar, this performance presents beloved opera favorites reimagined for one piano, four hands.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Opera BrewHaHa",
+            "composer": "Various / Operatic Highlights",
+            "date": "July 29, 2026",
+            "time": "7:30 PM (Doors at 6:00 PM)",
+            "isoStart": "2026-07-29T19:30:00",
+            "isoEnd": "2026-07-29T21:30:00",
+            "venue": "Granite Brewery and Tied House",
+            "address": "245 Eglinton Ave E, Toronto, ON M4P 3B7",
+            "ticketLink": "https://www.nostringstheatre.com/upcoming",
+            "imageLink": "assets/images/opera_brewhaha.jpg",
+            "price": "Tickets: $25",
+            "description": "A relaxed, pub-style fundraiser featuring arias, music theatre, and contemporary songs, along with a silent auction. Held at the Granite Brewery and Tied House, this event is part of No Strings Theatre's Summerstage 2026 season.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "The Marriage of Figaro",
+            "composer": "Wolfgang Amadeus Mozart",
+            "date": "August 14 - 16, 2026",
+            "time": "Friday @ 7:30 PM, Saturday @ 2:00 PM & 7:30 PM, Sunday @ 2:00 PM",
+            "isoStart": "2026-08-14T19:30:00",
+            "isoEnd": "2026-08-16T16:00:00",
+            "venue": "Church of St. Peter and St. Simon (SPSS)",
+            "address": "525 Bloor St E, Toronto, ON M4W 1J1",
+            "ticketLink": "https://www.nostringstheatre.com/upcoming",
+            "imageLink": "assets/images/marriage_of_figaro.png",
+            "price": "Tickets: $15 - $45",
+            "description": "Wolfgang Amadeus Mozart's brilliant comic masterpiece The Marriage of Figaro, presented as the culminating performance of No Strings Theatre's Summer 2026 Emerging Artist Opera Intensive. Directed by Rob Herriot and under the music direction of Vlad Soloviev, this fully staged production features a talented cast of emerging opera singers performing Mozart's witty and sparkling farce.",
+            "status": "Upcoming"
+        }
+    ]
+
 # ==============================================================================
 # MAIN ENGINE
 # ==============================================================================
@@ -977,11 +1047,13 @@ def main():
         "Canadian Children's Opera Company": scrape_ccoc,
         "Canadian Opera Company": scrape_coc,
         "Confluence Concerts": scrape_confluence,
+        "No Strings Theatre": scrape_nst,
         "Opera 5": scrape_opera5,
         "Opera Atelier": scrape_opera_atelier,
         "Opera by Request": scrape_opera_by_request,
         "Opéra Queens": scrape_opera_queens,
         "Opera Revue": scrape_opera_revue,
+        "Opera York": scrape_opera_york,
         "Southern Ontario Lyric Opera": scrape_solo,
         "Summer Opera Lyric Theatre": scrape_solt,
         "Tapestry Opera": scrape_tapestry,

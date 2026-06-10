@@ -268,6 +268,36 @@ def scrape_tco():
             "price": "Tickets from $25",
             "description": "Offenbach's sparkling, satirical operetta turns classic Greek myths on their head in a witty comedy. Featuring the famous 'Can-Can' melody, fully staged in English with the North York Concert Orchestra in the pit.",
             "status": "Upcoming"
+        },
+        {
+            "title": "La Bohème",
+            "composer": "Giacomo Puccini",
+            "date": "November 27 & 29, 2026",
+            "time": "7:30 PM (Sunday matinee at 2:30 PM)",
+            "isoStart": "2026-11-27T19:30:00",
+            "isoEnd": "2026-11-29T17:00:00",
+            "venue": "The Terminal Theatre",
+            "address": "207 Queens Quay West, Toronto, ON M5J 1A7",
+            "ticketLink": "https://www.torontocityopera.com/laboheme",
+            "imageLink": "assets/images/la_boheme.jpg",
+            "price": "Tickets from $25",
+            "description": "A luminous portrait of young artists chasing love and life in bohemian Paris. When the seamstress Mimì meets the poet Rodolfo, their romance blossoms amid friendship, laughter, and the harsh realities of poverty. With some of the most unforgettable melodies in opera, Giacomo Puccini’s romantic masterpiece captures the beauty and fragility of love.",
+            "status": "Upcoming"
+        },
+        {
+          "title": "The Pirates of Penzance",
+          "composer": "Arthur Sullivan",
+          "date": "June 18 & 20, 2027",
+          "time": "7:30 PM (Sunday matinee at 2:30 PM)",
+          "isoStart": "2027-06-18T19:30:00",
+          "isoEnd": "2027-06-20T17:00:00",
+          "venue": "The Terminal Theatre",
+          "address": "207 Queens Quay West, Toronto, ON M5J 1A7",
+          "ticketLink": "https://www.torontocityopera.com/copy-of-orpheus-in-the-underworld",
+          "imageLink": "assets/images/pirates_of_penzance.jpg",
+          "price": "Tickets from $25",
+          "description": "Gilbert and Sullivan's classic comic operetta about Frederic, an apprentice pirate who, having reached his 21st year, is released from his apprenticeship but discovers that he was born on a leap year, meaning he must remain bound to the pirates until he is 63. Featuring beloved characters like the Major-General and the Pirate King, and classic songs like 'I am the very model of a modern Major-General'. Sung in English with projected sung text.",
+          "status": "Upcoming"
         }
     ]
 

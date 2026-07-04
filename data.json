@@ -872,6 +872,21 @@
           "status": "Passed"
         },
         {
+          "title": "Opera Revue presents: Cabaret to Modern Day",
+          "composer": "Various / Operatic Highlights",
+          "date": "January 12, 2025",
+          "time": "7:00 PM",
+          "isoStart": "2025-01-12T19:00:00",
+          "isoEnd": "2025-01-12T22:00:00",
+          "venue": "Toronto",
+          "address": "1300 Gerrard St E, Toronto, ON M4L 1Y7",
+          "ticketLink": "https://www.theredwoodtheatre.com/event-details/opera-revue-presents-cabaret-to-modern-day",
+          "imageLink": "assets/images/logo.png",
+          "price": "Pay-What-You-Can (Suggested $20)",
+          "description": "Cabaret to Modern Day\nDoors open at 7pm\nShow starts at 8pm",
+          "status": "Passed"
+        },
+        {
           "title": "Opera Revue presents: Bach-Humbug",
           "composer": "Various / Operatic Highlights",
           "date": "December 08, 2024",

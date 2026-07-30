@@ -164,10 +164,25 @@ def scrape_coc():
 
 def scrape_ggs():
     print("Scraping The Glenn Gould School via RCM API...")
-    url = "https://cms.rcmusic.com/api/concerts?filters[Date][$gte]=2026-05-25&pagination[pageSize]=100&populate=*"
+    url = "https://cms.rcmusic.com/api/concerts?filters[Date][$gte]=2026-05-25&pagination[pageSize]=200&populate=*"
     req = urllib.request.Request(url, headers=HEADERS)
     
     fallback_events = [
+        {
+            "title": "The Glenn Gould School Chamber Opera",
+            "composer": "Samuel Barber / Leonard Bernstein",
+            "date": "November 6 & 7, 2026",
+            "time": "7:30 PM",
+            "isoStart": "2026-11-06T19:30:00",
+            "isoEnd": "2026-11-07T22:00:00",
+            "venue": "Mazzoleni Concert Hall",
+            "address": "273 Bloor St W, Toronto, ON M5S 1W2",
+            "ticketLink": "https://www.rcmusic.com/concert/ggs-chamber-opera-barbers-a-hand-of-bridge-and-bernsteins-trouble-in-tahiti-452601",
+            "imageLink": "https://rcmusic-production-strapi-media.s3.ca-central-1.amazonaws.com/The_Glenn_Gould_School_Chamber_Opera_440x400_0d24e69059.png",
+            "price": "Tickets from $20",
+            "description": "Students from The Glenn Gould School’s vocal program present a double bill of Samuel Barber’s A Hand of Bridge, a poignant miniature opera that reveals the hidden thoughts of four bridge players during a seemingly ordinary card game, and Leonard Bernstein’s Trouble in Tahiti, a jazz-infused one-act opera depicting a day in the life of a troubled married couple living in 1950s suburbia. Conducted by Jennifer Tung and directed by Mario Pacheco.",
+            "status": "Upcoming"
+        },
         {
             "title": "The Glenn Gould School Spring Opera",
             "composer": "TBA / Directed Performance",
@@ -189,43 +204,126 @@ def scrape_ggs():
         with urllib.request.urlopen(req, context=ctx, timeout=10) as response:
             res_data = response.read().decode('utf-8', errors='ignore')
             data = json.loads(res_data)
-            events = []
+            
+            spring_opera_events = []
+            chamber_opera_events = []
             
             for item in data.get('data', []):
                 attrs = item.get('attributes', {})
-                display_name = attrs.get('DisplayName')
-                if display_name and "Glenn Gould School Spring Opera" in display_name:
-                    date = attrs.get('Date')
-                    time = attrs.get('Time') or "19:30:00"
-                    slug = attrs.get('slug')
-                    price = attrs.get('StartingPrice') or "25"
+                display_name = attrs.get('DisplayName') or ""
+                if "Glenn Gould School Spring Opera" in display_name:
+                    spring_opera_events.append(item)
+                elif "Glenn Gould School Chamber Opera" in display_name:
+                    chamber_opera_events.append(item)
+            
+            events = []
+            
+            # Parse Chamber Opera if found
+            if chamber_opera_events:
+                chamber_opera_events.sort(key=lambda x: x.get('attributes', {}).get('Date', ''))
+                first_event = chamber_opera_events[0]
+                last_event = chamber_opera_events[-1]
+                
+                first_attrs = first_event.get('attributes', {})
+                last_attrs = last_event.get('attributes', {})
+                
+                import datetime
+                try:
+                    dt_start = datetime.datetime.strptime(first_attrs.get('Date'), "%Y-%m-%d")
+                    dt_end = datetime.datetime.strptime(last_attrs.get('Date'), "%Y-%m-%d")
+                    if dt_start.year == dt_end.year and dt_start.month == dt_end.month:
+                        if dt_start.day == dt_end.day:
+                            date_str = f"{dt_start.strftime('%B')} {dt_start.day}, {dt_start.year}"
+                        else:
+                            date_str = f"{dt_start.strftime('%B')} {dt_start.day} & {dt_end.day}, {dt_start.year}"
+                    else:
+                        date_str = f"{dt_start.strftime('%B')} {dt_start.day}, {dt_start.year} & {dt_end.strftime('%B')} {dt_end.day}, {dt_end.year}"
+                except Exception:
+                    date_str = "November 6 & 7, 2026"
+                
+                price = first_attrs.get('StartingPrice') or "20"
+                slug = first_attrs.get('slug')
+                
+                img_url = "https://rcmusic-production-strapi-media.s3.ca-central-1.amazonaws.com/The_Glenn_Gould_School_Chamber_Opera_440x400_0d24e69059.png"
+                img_data = first_attrs.get('EventImage', {}).get('data', {})
+                if img_data:
+                    img_attrs = img_data.get('attributes', {})
+                    if img_attrs.get('url'):
+                        img_url = img_attrs.get('url')
+                
+                events.append({
+                    "title": "The Glenn Gould School Chamber Opera",
+                    "composer": "Samuel Barber / Leonard Bernstein",
+                    "date": date_str,
+                    "time": "7:30 PM",
+                    "isoStart": f"{first_attrs.get('Date')}T19:30:00",
+                    "isoEnd": f"{last_attrs.get('Date')}T22:00:00",
+                    "venue": first_attrs.get('Venue') or "Mazzoleni Concert Hall",
+                    "address": "273 Bloor St W, Toronto, ON M5S 1W2",
+                    "ticketLink": f"https://www.rcmusic.com/concert/{slug}" if "concert" in slug else f"https://www.rcmusic.com/events/{slug}",
+                    "imageLink": img_url,
+                    "price": f"Tickets from ${price}" if isinstance(price, (int, float)) or (isinstance(price, str) and price.isdigit()) else f"{price}",
+                    "description": "Students from The Glenn Gould School’s vocal program present a double bill of Samuel Barber’s A Hand of Bridge, a poignant miniature opera that reveals the hidden thoughts of four bridge players during a seemingly ordinary card game, and Leonard Bernstein’s Trouble in Tahiti, a jazz-infused one-act opera depicting a day in the life of a troubled married couple living in 1950s suburbia. Conducted by Jennifer Tung and directed by Mario Pacheco.",
+                    "status": "Upcoming"
+                })
+                
+            # Parse Spring Opera if found
+            if spring_opera_events:
+                spring_opera_events.sort(key=lambda x: x.get('attributes', {}).get('Date', ''))
+                first_event = spring_opera_events[0]
+                last_event = spring_opera_events[-1]
+                
+                first_attrs = first_event.get('attributes', {})
+                last_attrs = last_event.get('attributes', {})
+                
+                import datetime
+                try:
+                    dt_start = datetime.datetime.strptime(first_attrs.get('Date'), "%Y-%m-%d")
+                    dt_end = datetime.datetime.strptime(last_attrs.get('Date'), "%Y-%m-%d")
+                    if dt_start.year == dt_end.year and dt_start.month == dt_end.month:
+                        if dt_start.day == dt_end.day:
+                            date_str = f"{dt_start.strftime('%B')} {dt_start.day}, {dt_start.year}"
+                        else:
+                            date_str = f"{dt_start.strftime('%B')} {dt_start.day} & {dt_end.day}, {dt_start.year}"
+                    else:
+                        date_str = f"{dt_start.strftime('%B')} {dt_start.day}, {dt_start.year} & {dt_end.strftime('%B')} {dt_end.day}, {dt_end.year}"
+                except Exception:
+                    date_str = "March 17 & 19, 2027"
+                
+                price = first_attrs.get('StartingPrice') or "25"
+                slug = first_attrs.get('slug')
+                
+                img_url = "https://rcmusic-production-strapi-media.s3.ca-central-1.amazonaws.com/ggs_spring_opera_440x400_3_8114ae7aa3.png"
+                img_data = first_attrs.get('EventImage', {}).get('data', {})
+                if img_data:
+                    img_attrs = img_data.get('attributes', {})
+                    if img_attrs.get('url'):
+                        img_url = img_attrs.get('url')
+                        
+                events.append({
+                    "title": "The Glenn Gould School Spring Opera",
+                    "composer": "TBA / Directed Performance",
+                    "date": date_str,
+                    "time": "7:30 PM",
+                    "isoStart": f"{first_attrs.get('Date')}T19:30:00",
+                    "isoEnd": f"{last_attrs.get('Date')}T22:00:00",
+                    "venue": first_attrs.get('Venue') or "Koerner Hall",
+                    "address": "273 Bloor St W, Toronto, ON M5S 1W2",
+                    "ticketLink": f"https://www.rcmusic.com/events/{slug}",
+                    "imageLink": img_url,
+                    "price": f"Tickets from ${price}" if isinstance(price, (int, float)) or (isinstance(price, str) and price.isdigit()) else f"{price}",
+                    "description": "Students from The Glenn Gould School’s vocal program present their fully staged annual opera in Koerner Hall, conducted by Judith Yan. Experience future classical stars supported by the prestigious Royal Conservatory Orchestra.",
+                    "status": "Upcoming"
+                })
+            
+            # Fill in from fallbacks if any expected titles are missing
+            found_titles = [e["title"] for e in events]
+            for fb in fallback_events:
+                if fb["title"] not in found_titles:
+                    events.append(fb)
                     
-                    img_url = "https://rcmusic-production-strapi-media.s3.ca-central-1.amazonaws.com/ggs_spring_opera_440x400_3_8114ae7aa3.png"
-                    img_data = attrs.get('EventImage', {}).get('data', {})
-                    if img_data:
-                        img_attrs = img_data.get('attributes', {})
-                        if img_attrs.get('url'):
-                            img_url = img_attrs.get('url')
-                            
-                    events.append({
-                        "title": "The Glenn Gould School Spring Opera",
-                        "composer": "TBA / Directed Performance",
-                        "date": f"March 17 & 19, 2027" if "17" in date or "19" in date else f"{date}",
-                        "time": "7:30 PM",
-                        "isoStart": "2027-03-17T19:30:00",
-                        "isoEnd": "2027-03-19T22:00:00",
-                        "venue": attrs.get('Venue') or "Koerner Hall",
-                        "address": "273 Bloor St W, Toronto, ON M5S 1W2",
-                        "ticketLink": f"https://www.rcmusic.com/events/{slug}",
-                        "imageLink": img_url,
-                        "price": f"Tickets from ${price}",
-                        "description": "Students from The Glenn Gould School’s vocal program present their fully staged annual opera in Koerner Hall, conducted by Judith Yan. Experience future classical stars supported by the prestigious Royal Conservatory Orchestra.",
-                        "status": "Upcoming"
-                    })
-            if events:
-                # Merge duplicate display names into a single record for clarity
-                return [events[0]]
-            return fallback_events
+            events.sort(key=lambda x: x.get("isoStart", ""))
+            return events
     except Exception as e:
         print(f"Error scraping GGS API: {e}")
         return fallback_events

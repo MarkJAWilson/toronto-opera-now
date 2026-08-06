@@ -164,7 +164,7 @@ def scrape_coc():
 
 def scrape_ggs():
     print("Scraping The Glenn Gould School via RCM API...")
-    url = "https://cms.rcmusic.com/api/concerts?filters[Date][$gte]=2026-05-25&pagination[pageSize]=200&populate=*"
+    url = "https://cms.rcmusic.com/api/concerts?pagination[pageSize]=500&populate=*"
     req = urllib.request.Request(url, headers=HEADERS)
     
     fallback_events = [
@@ -184,18 +184,18 @@ def scrape_ggs():
             "status": "Upcoming"
         },
         {
-            "title": "The Glenn Gould School Spring Opera",
-            "composer": "TBA / Directed Performance",
+            "title": "The Glenn Gould School Spring Opera: Le nozze di Figaro",
+            "composer": "Wolfgang Amadeus Mozart",
             "date": "March 17 & 19, 2027",
             "time": "7:30 PM",
             "isoStart": "2027-03-17T19:30:00",
             "isoEnd": "2027-03-19T22:00:00",
             "venue": "Koerner Hall",
             "address": "273 Bloor St W, Toronto, ON M5S 1W2",
-            "ticketLink": "https://www.rcmusic.com/events/the-glenn-gould-school-spring-opera-430803",
+            "ticketLink": "https://www.rcmusic.com/concert/the-glenn-gould-school-spring-opera-430803",
             "imageLink": "https://rcmusic-production-strapi-media.s3.ca-central-1.amazonaws.com/ggs_spring_opera_440x400_3_8114ae7aa3.png",
             "price": "Tickets from $25",
-            "description": "Students from The Glenn Gould School’s vocal program present their fully staged annual opera in Koerner Hall, conducted by Judith Yan. Experience future classical stars supported by the prestigious Royal Conservatory Orchestra.",
+            "description": "Students from The Glenn Gould School’s vocal program present Mozart’s brilliant comedy Le nozze di Figaro (The Marriage of Figaro), fully staged in Koerner Hall. Conducted by Judith Yan and featuring the future stars of classical voice, supported by the Royal Conservatory Orchestra.",
             "status": "Upcoming"
         }
     ]
@@ -210,6 +210,10 @@ def scrape_ggs():
             
             for item in data.get('data', []):
                 attrs = item.get('attributes', {})
+                # Filter by date in Python to match current/future events
+                date_val = attrs.get('Date') or ""
+                if not date_val or date_val < "2026-05-25":
+                    continue
                 display_name = attrs.get('DisplayName') or ""
                 if "Glenn Gould School Spring Opera" in display_name:
                     spring_opera_events.append(item)
@@ -260,7 +264,7 @@ def scrape_ggs():
                     "isoEnd": f"{last_attrs.get('Date')}T22:00:00",
                     "venue": first_attrs.get('Venue') or "Mazzoleni Concert Hall",
                     "address": "273 Bloor St W, Toronto, ON M5S 1W2",
-                    "ticketLink": f"https://www.rcmusic.com/concert/{slug}" if "concert" in slug else f"https://www.rcmusic.com/events/{slug}",
+                    "ticketLink": f"https://www.rcmusic.com/concert/{slug}",
                     "imageLink": img_url,
                     "price": f"Tickets from ${price}" if isinstance(price, (int, float)) or (isinstance(price, str) and price.isdigit()) else f"{price}",
                     "description": "Students from The Glenn Gould School’s vocal program present a double bill of Samuel Barber’s A Hand of Bridge, a poignant miniature opera that reveals the hidden thoughts of four bridge players during a seemingly ordinary card game, and Leonard Bernstein’s Trouble in Tahiti, a jazz-infused one-act opera depicting a day in the life of a troubled married couple living in 1950s suburbia. Conducted by Jennifer Tung and directed by Mario Pacheco.",
@@ -299,20 +303,30 @@ def scrape_ggs():
                     img_attrs = img_data.get('attributes', {})
                     if img_attrs.get('url'):
                         img_url = img_attrs.get('url')
+                
+                first_display = first_attrs.get('DisplayName') or ""
+                if "Le nozze di Figaro" in first_display or "Figaro" in first_display:
+                    title = "The Glenn Gould School Spring Opera: Le nozze di Figaro"
+                    composer = "Wolfgang Amadeus Mozart"
+                    description = "Students from The Glenn Gould School’s vocal program present Mozart’s brilliant comedy Le nozze di Figaro (The Marriage of Figaro), fully staged in Koerner Hall. Conducted by Judith Yan and featuring the future stars of classical voice, supported by the Royal Conservatory Orchestra."
+                else:
+                    title = "The Glenn Gould School Spring Opera"
+                    composer = "TBA / Directed Performance"
+                    description = "Students from The Glenn Gould School’s vocal program present their fully staged annual opera in Koerner Hall, conducted by Judith Yan. Experience future classical stars supported by the prestigious Royal Conservatory Orchestra."
                         
                 events.append({
-                    "title": "The Glenn Gould School Spring Opera",
-                    "composer": "TBA / Directed Performance",
+                    "title": title,
+                    "composer": composer,
                     "date": date_str,
                     "time": "7:30 PM",
                     "isoStart": f"{first_attrs.get('Date')}T19:30:00",
                     "isoEnd": f"{last_attrs.get('Date')}T22:00:00",
                     "venue": first_attrs.get('Venue') or "Koerner Hall",
                     "address": "273 Bloor St W, Toronto, ON M5S 1W2",
-                    "ticketLink": f"https://www.rcmusic.com/events/{slug}",
+                    "ticketLink": f"https://www.rcmusic.com/concert/{slug}",
                     "imageLink": img_url,
                     "price": f"Tickets from ${price}" if isinstance(price, (int, float)) or (isinstance(price, str) and price.isdigit()) else f"{price}",
-                    "description": "Students from The Glenn Gould School’s vocal program present their fully staged annual opera in Koerner Hall, conducted by Judith Yan. Experience future classical stars supported by the prestigious Royal Conservatory Orchestra.",
+                    "description": description,
                     "status": "Upcoming"
                 })
             

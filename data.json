@@ -793,7 +793,7 @@
           "venue": "Mazzoleni Concert Hall",
           "address": "273 Bloor St W, Toronto, ON M5S 1W2",
           "ticketLink": "https://www.rcmusic.com/concert/ggs-chamber-opera-barbers-a-hand-of-bridge-and-bernsteins-trouble-in-tahiti-452601",
-          "imageLink": "https://rcmusic-production-strapi-media.s3.ca-central-1.amazonaws.com/The_Glenn_Gould_School_Chamber_Opera_440x400_0d24e69059.png",
+          "imageLink": "https://rcmusic-production-strapi-media.s3.ca-central-1.amazonaws.com/GGS_Chamber_440x400_08e8727e55.png",
           "price": "Tickets from $20",
           "description": "Students from The Glenn Gould School’s vocal program present a double bill of Samuel Barber’s A Hand of Bridge, a poignant miniature opera that reveals the hidden thoughts of four bridge players during a seemingly ordinary card game, and Leonard Bernstein’s Trouble in Tahiti, a jazz-infused one-act opera depicting a day in the life of a troubled married couple living in 1950s suburbia. Conducted by Jennifer Tung and directed by Mario Pacheco.",
           "status": "Upcoming"
@@ -840,21 +840,6 @@
           "price": "Pay-What-You-Can (Suggested $20)",
           "description": "This is the 3rd in our opera for everyone series. Hosted by Alex Hajek, this intimate lounge concert is a joyous venture into the world of opera, making it fun and accessible. Join us. Doors open at 2:30 pm, show starts at 3 pm.",
           "status": "Upcoming"
-        },
-        {
-          "title": "Canuck Cantatas - Friday 8pm",
-          "composer": "Various Canadian Composers",
-          "date": "April 10, 2026",
-          "time": "8:00 PM",
-          "isoStart": "2026-04-10T20:00:00",
-          "isoEnd": "2026-04-10T22:00:00",
-          "venue": "The Redwood Theatre",
-          "address": "1300 Gerrard St E, Toronto, ON M4L 1Y7",
-          "ticketLink": "https://www.theredwoodtheatre.com/event-details/canuk-cantatas-saturday-8pm-1",
-          "imageLink": "assets/images/logo.png",
-          "price": "Pay-What-You-Can (Suggested $20)",
-          "description": "Three world premieres…six visionary artists…one inventive night of Canadian opera!\nDoors open at 7pm. Show starts at 8pm",
-          "status": "Passed"
         },
         {
           "title": "La Bohème",

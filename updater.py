@@ -344,21 +344,50 @@ def scrape_ggs():
 
 def scrape_tapestry():
     print("Scraping Tapestry Opera...")
-    # Just return our verified Luminato co-presentation details
     return [
         {
-            "title": "10 Days in a Madhouse",
-            "composer": "Rene Orth / Hannah Moscovitch",
-            "date": "June 16, 18, 20, & 21, 2026",
-            "time": "June 16 & 18 at 7:30 PM, June 20 at 3:30 PM, June 21 at 1:30 PM",
-            "isoStart": "2026-06-16T19:30:00",
-            "isoEnd": "2026-06-21T15:00:00",
-            "venue": "Bluma Appel Theatre",
-            "address": "St. Lawrence Centre for the Arts, 27 Front St E, Toronto, ON M5E 1B4",
-            "ticketLink": "https://www.luminatofestival.com/10-days-in-a-madhouse",
-            "imageLink": "https://tapestryopera.com/wp-content/uploads/2025/11/2025-Luminato_10-Days-in-Madhouse_A3_1080x1080.jpg",
-            "price": "Tickets from $30",
-            "description": "Co-presented with the Luminato Festival. A groundbreaking contemporary chamber opera exposing Nellie Bly's heroic, undercover exploration of a women's asylum. Written by librettist Hannah Moscovitch and composer Rene Orth.",
+            "title": "Dog Days",
+            "composer": "David T. Little",
+            "date": "November 18 - 29, 2026",
+            "time": "Nov 18, 19, 25, 26 at 7:30 PM | Nov 21, 28 at 4:00 PM | Nov 22, 29 at 2:00 PM",
+            "isoStart": "2026-11-18T19:30:00",
+            "isoEnd": "2026-11-29T16:30:00",
+            "venue": "Nancy & Ed Jackman Performance Centre",
+            "address": "877 Yonge St, Suite 201, Toronto, ON M4W 3M2",
+            "ticketLink": "https://tapestryopera.com/performances/dog-days/",
+            "imageLink": "https://tapestryopera.com/wp-content/uploads/2026/11/Dog-Days-1080-x-1080.jpg",
+            "price": "Tickets on sale September 8, 2026",
+            "description": "Canadian premiere of David T. Little & Royce Vavrek's dystopian rock opera. Co-produced with Against the Grain Theatre. Combining classical vocals with electric guitars, this dark psychological drama explores human resilience and survival in a time of global collapse.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Forbidden",
+            "composer": "Afarin Mansouri",
+            "date": "May 13 - 16, 2027",
+            "time": "See website for performance times",
+            "isoStart": "2027-05-13T19:30:00",
+            "isoEnd": "2027-05-16T21:30:00",
+            "venue": "Nancy & Ed Jackman Performance Centre",
+            "address": "877 Yonge St, Suite 201, Toronto, ON M4W 3M2",
+            "ticketLink": "https://tapestryopera.com/performances/forbidden/",
+            "imageLink": "https://tapestryopera.com/wp-content/uploads/2026/06/Forbidden-1080-x1080-scaled.png",
+            "price": "Tickets on sale September 8, 2026",
+            "description": "World Premiere. Blending traditional opera, rap, and Persian classical orchestration, this genre-defying hip-hop fusion opera by Afarin Mansouri and Donna-Michelle St. Bernard explores themes of freedom, rules, and power.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Songbook XIII",
+            "composer": "Various Canadian Composers",
+            "date": "June 4 - 5, 2027",
+            "time": "See website for performance times",
+            "isoStart": "2027-06-04T19:30:00",
+            "isoEnd": "2027-06-05T21:30:00",
+            "venue": "Nancy & Ed Jackman Performance Centre",
+            "address": "877 Yonge St, Suite 201, Toronto, ON M4W 3M2",
+            "ticketLink": "https://tapestryopera.com",
+            "imageLink": "https://tapestryopera.com/wp-content/uploads/2019/09/logo-tapestry-teal.svg",
+            "price": "Tickets on sale September 8, 2026",
+            "description": "Showcasing Canada's next generation of emerging artists performing highlights from Tapestry's extensive collection of contemporary Canadian repertoire.",
             "status": "Upcoming"
         }
     ]
@@ -597,18 +626,63 @@ def scrape_atg():
     print("Scraping Against the Grain Theatre...")
     return [
         {
-            "title": "Opera Pub (Pride Edition)",
+            "title": "Opera Pub (October Edition)",
             "composer": "Various / Operatic Highlights",
-            "date": "June 22, 2026",
+            "date": "October 5, 2026",
             "time": "7:00 PM",
-            "isoStart": "2026-06-22T19:00:00",
-            "isoEnd": "2026-06-22T21:00:00",
+            "isoStart": "2026-10-05T19:00:00",
+            "isoEnd": "2026-10-05T21:00:00",
             "venue": "TRANZAC Club",
             "address": "292 Brunswick Ave, Toronto, ON M5S 2M6",
             "ticketLink": "https://atgtheatre.com/upcoming/opera-pub/",
             "imageLink": "https://atgtheatre.com/wp-content/uploads/2025/10/Opera-Pub-Logo-AtG-Red-300x300.png",
-            "price": "Free Admission (Pay what you can / Buy a beer)",
-            "description": "Against the Grain Theatre's signature Opera Pub returns to the TRANZAC for the Pride Edition! Experience live opera with a beer in hand, featuring talented singers in a relaxed, friendly environment. Perfect introduction for newcomers and a welcome break for opera veterans.",
+            "price": "Free Admission (Pay what you can / Registration encouraged)",
+            "description": "Against the Grain Theatre's signature Opera Pub returns to the TRANZAC! Experience live opera with a beer in hand, featuring talented singers in a relaxed, friendly environment. Perfect introduction for newcomers and a welcome break for opera veterans.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Opera Pub (November Edition)",
+            "composer": "Various / Operatic Highlights",
+            "date": "November 9, 2026",
+            "time": "7:00 PM",
+            "isoStart": "2026-11-09T19:00:00",
+            "isoEnd": "2026-11-09T21:00:00",
+            "venue": "TRANZAC Club",
+            "address": "292 Brunswick Ave, Toronto, ON M5S 2M6",
+            "ticketLink": "https://atgtheatre.com/upcoming/opera-pub/",
+            "imageLink": "https://atgtheatre.com/wp-content/uploads/2025/10/Opera-Pub-Logo-AtG-Red-300x300.png",
+            "price": "Free Admission (Pay what you can / Registration encouraged)",
+            "description": "Against the Grain Theatre's signature Opera Pub returns to the TRANZAC! Experience live opera with a beer in hand, featuring talented singers in a relaxed, friendly environment. Perfect introduction for newcomers and a welcome break for opera veterans.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Dog Days",
+            "composer": "David T. Little",
+            "date": "November 18 - 29, 2026",
+            "time": "Nov 18, 19, 25, 26 at 7:30 PM | Nov 21, 28 at 4:00 PM | Nov 22, 29 at 2:00 PM",
+            "isoStart": "2026-11-18T19:30:00",
+            "isoEnd": "2026-11-29T16:30:00",
+            "venue": "Nancy & Ed Jackman Performance Centre",
+            "address": "877 Yonge St, Suite 201, Toronto, ON M4W 3M2",
+            "ticketLink": "https://atgtheatre.com/whatson/dog-days/",
+            "imageLink": "https://tapestryopera.com/wp-content/uploads/2026/11/Dog-Days-1080-x-1080.jpg",
+            "price": "Tickets on sale September 8, 2026",
+            "description": "The Canadian premiere of David T. Little and Royce Vavrek's dystopian rock opera, Dog Days. Co-produced with Tapestry Opera and directed by Michael Hidetoshi Mori. This dark, visceral work combines classical vocals with electric guitars to explore survival, family, and humanity in a post-apocalyptic world.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Opera Pub (Holiday Edition)",
+            "composer": "Various / Operatic Highlights",
+            "date": "December 14, 2026",
+            "time": "7:00 PM",
+            "isoStart": "2026-12-14T19:00:00",
+            "isoEnd": "2026-12-14T21:00:00",
+            "venue": "TRANZAC Club",
+            "address": "292 Brunswick Ave, Toronto, ON M5S 2M6",
+            "ticketLink": "https://atgtheatre.com/upcoming/opera-pub/",
+            "imageLink": "https://atgtheatre.com/wp-content/uploads/2025/10/Opera-Pub-Logo-AtG-Red-300x300.png",
+            "price": "Free Admission (Pay what you can / Registration encouraged)",
+            "description": "A special festive holiday edition of AtG's signature Opera Pub at the TRANZAC! Enjoy your favorite operatic tunes with seasonal cheer, cold beer, and community warmth.",
             "status": "Upcoming"
         }
     ]

@@ -1171,6 +1171,86 @@ def scrape_nst():
         }
     ]
 
+def scrape_voicebox():
+    print("Scraping Voicebox: Opera in Concert...")
+    return [
+        {
+            "title": "Phantoms and Apparitions",
+            "composer": "Various / Operatic Highlights",
+            "date": "November 14, 2026",
+            "time": "4:00 PM",
+            "isoStart": "2026-11-14T16:00:00",
+            "isoEnd": "2026-11-14T18:00:00",
+            "venue": "The Edward Jackman Centre",
+            "address": "947 Queen Street East, 2nd Floor, Toronto, ON M4M 1J9",
+            "ticketLink": "http://www.operainconcert.com/",
+            "imageLink": "http://www.operainconcert.com/shows/480x480_salon.jpg",
+            "price": "Tickets: $30",
+            "description": "An intimate Opera Salon performance exploring themes of ghosts, spirits, and the supernatural in opera and classical song. Featuring emerging Canadian vocalists.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Die tote Stadt",
+            "composer": "Erich Wolfgang Korngold",
+            "date": "February 5, 2027",
+            "time": "7:30 PM",
+            "isoStart": "2027-02-05T19:30:00",
+            "isoEnd": "2027-02-05T22:30:00",
+            "venue": "Jeanne Lamon Hall, Trinity-St. Paul’s Centre",
+            "address": "427 Bloor St W, Toronto, ON M5S 1X7",
+            "ticketLink": "http://www.operainconcert.com/",
+            "imageLink": "http://www.operainconcert.com/shows/Die%20Tote%20Stadt.png",
+            "price": "Tickets: $55",
+            "description": "Erich Wolfgang Korngold's intense, symbolist masterpiece about grief, obsession, and memory, set in the atmospheric streets of Bruges. Featuring Lauren Margison (Marie/Marietta) and Scott Rumble (Paul/Jason).",
+            "status": "Upcoming"
+        },
+        {
+            "title": "The Canadian Opus and Anne Hebert's Novel",
+            "composer": "Charles Wilson / Various",
+            "date": "February 27, 2027",
+            "time": "4:00 PM",
+            "isoStart": "2027-02-27T16:00:00",
+            "isoEnd": "2027-02-27T18:00:00",
+            "venue": "The Edward Jackman Centre",
+            "address": "947 Queen Street East, 2nd Floor, Toronto, ON M4M 1J9",
+            "ticketLink": "http://www.operainconcert.com/",
+            "imageLink": "http://www.operainconcert.com/shows/480x480_salon.jpg",
+            "price": "Tickets: $30",
+            "description": "An educational and musical exploration of Charles Wilson's Kamouraska and its literary origins in Anne Hébert's classic novel.",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Manon",
+            "composer": "Jules Massenet",
+            "date": "March 20, 2027",
+            "time": "3:00 PM",
+            "isoStart": "2027-03-20T15:00:00",
+            "isoEnd": "2027-03-20T18:00:00",
+            "venue": "Jeanne Lamon Hall, Trinity-St. Paul’s Centre",
+            "address": "427 Bloor St W, Toronto, ON M5S 1X7",
+            "ticketLink": "http://www.operainconcert.com/",
+            "imageLink": "http://www.operainconcert.com/shows/Manon.png",
+            "price": "Tickets: $55",
+            "description": "Jules Massenet's tragic masterpiece depicting the rise and fall of the beautiful, headstrong Manon Lescaut and her passionate romance with the Chevalier des Grieux. Featuring Diana Rockwell (Manon Lescaut) and Colin Ainsworth (Le Chevalier des Grieux).",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Kamouraska",
+            "composer": "Charles Wilson",
+            "date": "May 15, 2027",
+            "time": "3:00 PM",
+            "isoStart": "2027-05-15T15:00:00",
+            "isoEnd": "2027-05-15T18:00:00",
+            "venue": "Jeanne Lamon Hall, Trinity-St. Paul’s Centre",
+            "address": "427 Bloor St W, Toronto, ON M5S 1X7",
+            "ticketLink": "http://www.operainconcert.com/",
+            "imageLink": "http://www.operainconcert.com/shows/Kamouraska.png",
+            "price": "Tickets: $55",
+            "description": "A powerful Canadian chamber opera based on Anne Hébert's famous historical novel of love, murder, and guilt in 19th-century Quebec. Featuring Maeve Palmer (Elizabeth D’Aulnières).",
+            "status": "Upcoming"
+        }
+    ]
+
 # ==============================================================================
 # MAIN ENGINE
 # ==============================================================================
@@ -1278,7 +1358,8 @@ def main():
         "Toronto City Opera": scrape_tco,
         "Toronto Summer Music": scrape_tsm,
         "Ubu Opera": scrape_ubu,
-        "University of Toronto Opera": scrape_uoft_opera
+        "University of Toronto Opera": scrape_uoft_opera,
+        "Voicebox: Opera in Concert": scrape_voicebox
     }
     
     # Iterate and merge
@@ -1290,6 +1371,7 @@ def main():
                 new_prods = scrapers[name]()
                 if new_prods:
                     company["productions"] = new_prods
+                    company["status"] = "Active"
                     print(f" -> Updated {name} with {len(new_prods)} productions.")
                     updated_count += 1
                 else:

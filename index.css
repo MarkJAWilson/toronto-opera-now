@@ -493,7 +493,8 @@ button {
 .card-img-wrap img[src*="73f7a236-661c-4538-9b6b-c035aa17cb7f"],
 .card-img-wrap img[src*="414072b8-af94-4fa8-b885-1eaf3a3bf86a"],
 .card-img-wrap img[src*="Season+Announcement+Posters+Final"],
-.card-img-wrap img[src*="Season%20Announcement%20Posters%20Final"] {
+.card-img-wrap img[src*="Season%20Announcement%20Posters%20Final"],
+.card-img-wrap img[src*="drag_me_to_the_opera"] {
     object-fit: contain;
     padding: 16px;
     background: rgba(255, 255, 255, 0.01);
@@ -965,7 +966,8 @@ button {
 .modal-image-wrap img[src*="73f7a236-661c-4538-9b6b-c035aa17cb7f"],
 .modal-image-wrap img[src*="414072b8-af94-4fa8-b885-1eaf3a3bf86a"],
 .modal-image-wrap img[src*="Season+Announcement+Posters+Final"],
-.modal-image-wrap img[src*="Season%20Announcement%20Posters%20Final"] {
+.modal-image-wrap img[src*="Season%20Announcement%20Posters%20Final"],
+.modal-image-wrap img[src*="drag_me_to_the_opera"] {
     object-fit: contain;
     padding: 32px;
     background: rgba(255, 255, 255, 0.01);

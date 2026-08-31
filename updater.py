@@ -1251,6 +1251,29 @@ def scrape_voicebox():
         }
     ]
 
+def scrape_wtf():
+    print("Scraping What The Festival...")
+    url = "https://www.wtfestival.ca/next"
+    html = fetch_html(url)
+    # Return structured production for What The Festival
+    return [
+        {
+            "title": "Drag Me to the Opera",
+            "composer": "Steven Morton / Bizet, Donizetti, Gounod, Mozart, Puccini, Purcell",
+            "date": "September 25 & 27, 2026",
+            "time": "Sep 25 at 7:30 PM | Sep 27 at 4:30 PM",
+            "isoStart": "2026-09-25T19:30:00",
+            "isoEnd": "2026-09-27T18:00:00",
+            "venue": "Small World Music (Inside Youngplace)",
+            "address": "180 Shaw Street, Toronto, ON M6J 2W5",
+            "ticketLink": "https://www.eventbrite.ca/e/drag-me-to-the-opera-with-aida-cupcake-tickets-1998855629997",
+            "imageLink": "assets/images/drag_me_to_the_opera.jpg",
+            "price": "Tickets: $33.59 (Festival passes: 3 shows for $75, 5 shows for $110)",
+            "description": "Toronto Premiere! Drag Me to the Opera tells the story of a young man who loves to sing - even when people question his talent. Parts of the story are told through arias written for women (hence the drag) and fun opera facts. In the end, his experiences, his passion, — and a little luck — help him discover his true voice and follow his heart. Written and performed by Steven Morton featuring operatic persona Aida Cupcake, with music by Bizet, Donizetti, Gounod, Mozart, Puccini, and Purcell.",
+            "status": "Upcoming"
+        }
+    ]
+
 # ==============================================================================
 # MAIN ENGINE
 # ==============================================================================
@@ -1359,7 +1382,8 @@ def main():
         "Toronto Summer Music": scrape_tsm,
         "Ubu Opera": scrape_ubu,
         "University of Toronto Opera": scrape_uoft_opera,
-        "Voicebox: Opera in Concert": scrape_voicebox
+        "Voicebox: Opera in Concert": scrape_voicebox,
+        "What The Festival": scrape_wtf
     }
     
     # Iterate and merge

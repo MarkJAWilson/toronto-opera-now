@@ -521,6 +521,61 @@
       ]
     },
     {
+      "name": "Opera Revue",
+      "abbreviation": "Opera Revue",
+      "website": "https://operarevue.com/",
+      "status": "Active",
+      "description": "Opera Revue makes opera accessible, fun, and casual by performing high-quality opera in neighborhood bars, breweries, and lounges. They are known for their regular series at the Granite Brewery, themed events like Drag Me to the Opera, and cross-over mashups like OperaMANIA.",
+      "socials": {
+        "facebook": "https://www.facebook.com/operarevue",
+        "instagram": "https://www.instagram.com/operarevue/"
+      },
+      "productions": [
+        {
+          "title": "Drag Me to the Opera",
+          "composer": "Various / Cabaret Highlights",
+          "date": "June 25, 2026",
+          "time": "7:30 PM",
+          "isoStart": "2026-06-25T19:30:00",
+          "isoEnd": "2026-06-25T22:00:00",
+          "venue": "Granite Brewery",
+          "address": "245 Eglinton Ave E, Toronto, ON M4P 3B7",
+          "ticketLink": "https://operarevue.com/upcoming",
+          "imageLink": "assets/images/opera_revue.jpg",
+          "price": "Tickets: $25 (Early Bird)",
+          "description": "Opera Revue presents their hit show 'Drag Me to the Opera' at the Granite Brewery! Experience an incredible, high-energy collaboration blending classical opera arias with fabulous drag performances, hosted by Gregory Finney and starring drag sensation Selena Vyle.",
+          "status": "Upcoming"
+        }
+      ]
+    },
+    {
+      "name": "Opera York",
+      "abbreviation": "Opera York",
+      "website": "http://www.operayork.com/",
+      "status": "Active",
+      "description": "Serving York Region and northern Toronto, Opera York provides professional staged performance opportunities for emerging Canadian classical artists, presenting accessible and beautiful standard repertoire.",
+      "socials": {
+        "facebook": "https://www.facebook.com/OperaYork"
+      },
+      "productions": [
+        {
+          "title": "Pirates of Penzance",
+          "composer": "Arthur Sullivan",
+          "date": "July 16 & 17, 2026",
+          "time": "7:30 PM",
+          "isoStart": "2026-07-16T19:30:00",
+          "isoEnd": "2026-07-17T22:00:00",
+          "venue": "Richmond Hill Centre for the Performing Arts",
+          "address": "10268 Yonge St, Richmond Hill, ON L4C 3B7",
+          "ticketLink": "https://www.rhcentre.ca/Online/article/OperaYorkPiratesofPenzance",
+          "imageLink": "https://operayork.com/wp-content/uploads/2026/05/penzance-banner.png",
+          "price": "Tickets: $35 & $40, Seniors $30",
+          "description": "Gilbert & Sullivan's classic comic opera about Frederic, a pirate apprentice released on his 21st birthday who discovers he was born on a leap year (February 29) and is bound to serve them until his actual 21st birthday. A full production featuring chorus, orchestra, and surtitles, directed by Penelope Cookson with music direction by Geoffrey Butler.",
+          "status": "Upcoming"
+        }
+      ]
+    },
+    {
       "name": "Opera by Request",
       "abbreviation": "OBR",
       "website": "https://operabyrequest.ca/",
@@ -642,61 +697,6 @@
           "imageLink": "assets/images/opera_queens.png",
           "price": "Free / Pay-What-You-Can",
           "description": "Concluding the six-month Tranzac residency with a Latin Night theme, featuring classical vocal works by Spanish and Latin American composers, drag-opera segments, and community open mic slots.",
-          "status": "Upcoming"
-        }
-      ]
-    },
-    {
-      "name": "Opera Revue",
-      "abbreviation": "Opera Revue",
-      "website": "https://operarevue.com/",
-      "status": "Active",
-      "description": "Opera Revue makes opera accessible, fun, and casual by performing high-quality opera in neighborhood bars, breweries, and lounges. They are known for their regular series at the Granite Brewery, themed events like Drag Me to the Opera, and cross-over mashups like OperaMANIA.",
-      "socials": {
-        "facebook": "https://www.facebook.com/operarevue",
-        "instagram": "https://www.instagram.com/operarevue/"
-      },
-      "productions": [
-        {
-          "title": "Drag Me to the Opera",
-          "composer": "Various / Cabaret Highlights",
-          "date": "June 25, 2026",
-          "time": "7:30 PM",
-          "isoStart": "2026-06-25T19:30:00",
-          "isoEnd": "2026-06-25T22:00:00",
-          "venue": "Granite Brewery",
-          "address": "245 Eglinton Ave E, Toronto, ON M4P 3B7",
-          "ticketLink": "https://operarevue.com/upcoming",
-          "imageLink": "assets/images/opera_revue.jpg",
-          "price": "Tickets: $25 (Early Bird)",
-          "description": "Opera Revue presents their hit show 'Drag Me to the Opera' at the Granite Brewery! Experience an incredible, high-energy collaboration blending classical opera arias with fabulous drag performances, hosted by Gregory Finney and starring drag sensation Selena Vyle.",
-          "status": "Upcoming"
-        }
-      ]
-    },
-    {
-      "name": "Opera York",
-      "abbreviation": "Opera York",
-      "website": "http://www.operayork.com/",
-      "status": "Active",
-      "description": "Serving York Region and northern Toronto, Opera York provides professional staged performance opportunities for emerging Canadian classical artists, presenting accessible and beautiful standard repertoire.",
-      "socials": {
-        "facebook": "https://www.facebook.com/OperaYork"
-      },
-      "productions": [
-        {
-          "title": "Pirates of Penzance",
-          "composer": "Arthur Sullivan",
-          "date": "July 16 & 17, 2026",
-          "time": "7:30 PM",
-          "isoStart": "2026-07-16T19:30:00",
-          "isoEnd": "2026-07-17T22:00:00",
-          "venue": "Richmond Hill Centre for the Performing Arts",
-          "address": "10268 Yonge St, Richmond Hill, ON L4C 3B7",
-          "ticketLink": "https://www.rhcentre.ca/Online/article/OperaYorkPiratesofPenzance",
-          "imageLink": "https://operayork.com/wp-content/uploads/2026/05/penzance-banner.png",
-          "price": "Tickets: $35 & $40, Seniors $30",
-          "description": "Gilbert & Sullivan's classic comic opera about Frederic, a pirate apprentice released on his 21st birthday who discovers he was born on a leap year (February 29) and is bound to serve them until his actual 21st birthday. A full production featuring chorus, orchestra, and surtitles, directed by Penelope Cookson with music direction by Geoffrey Butler.",
           "status": "Upcoming"
         }
       ]
@@ -1280,6 +1280,31 @@
           "imageLink": "http://www.operainconcert.com/shows/Kamouraska.png",
           "price": "Tickets: $55",
           "description": "A powerful Canadian chamber opera based on Anne Hébert's famous historical novel of love, murder, and guilt in 19th-century Quebec. Featuring Maeve Palmer (Elizabeth D’Aulnières).",
+          "status": "Upcoming"
+        }
+      ]
+    },
+    {
+      "name": "What The Festival",
+      "abbreviation": "WTF",
+      "website": "https://www.wtfestival.ca/",
+      "status": "Active",
+      "description": "What The Festival (presented by Strange Maker Collective) is an annual Toronto performing arts festival celebrating weird, wild, and wonderfully fun theatre, showcasing top clown, puppetry, physical comedy, cabaret, and drag opera performers.",
+      "socials": {},
+      "productions": [
+        {
+          "title": "Drag Me to the Opera",
+          "composer": "Steven Morton / Bizet, Donizetti, Gounod, Mozart, Puccini, Purcell",
+          "date": "September 25 & 27, 2026",
+          "time": "Sep 25 at 7:30 PM | Sep 27 at 4:30 PM",
+          "isoStart": "2026-09-25T19:30:00",
+          "isoEnd": "2026-09-27T18:00:00",
+          "venue": "Small World Music (Inside Youngplace)",
+          "address": "180 Shaw Street, Toronto, ON M6J 2W5",
+          "ticketLink": "https://www.eventbrite.ca/e/drag-me-to-the-opera-with-aida-cupcake-tickets-1998855629997",
+          "imageLink": "assets/images/drag_me_to_the_opera.jpg",
+          "price": "Tickets: $33.59 (Festival passes: 3 shows for $75, 5 shows for $110)",
+          "description": "Toronto Premiere! Drag Me to the Opera tells the story of a young man who loves to sing - even when people question his talent. Parts of the story are told through arias written for women (hence the drag) and fun opera facts. In the end, his experiences, his passion, — and a little luck — help him discover his true voice and follow his heart. Written and performed by Steven Morton featuring operatic persona Aida Cupcake, with music by Bizet, Donizetti, Gounod, Mozart, Puccini, and Purcell.",
           "status": "Upcoming"
         }
       ]

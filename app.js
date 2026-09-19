@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function initApp() {
     try {
-        const response = await fetch("data.json");
+        const response = await fetch("data.json?v=" + Date.now());
         if (!response.ok) throw new Error("Could not load data.json");
         operaData = await response.json();
         
@@ -419,9 +419,22 @@ function renderGridPanel(productions) {
         const card = document.createElement("div");
         card.className = "prod-card";
         
+        const isContain = prod.imageLink && (
+            prod.imageLink.includes("carmen_rigoletto") ||
+            prod.imageLink.includes("confluence") ||
+            prod.imageLink.includes("drag_me") ||
+            prod.imageLink.includes("logo") ||
+            prod.imageLink.includes("opera_by_request") ||
+            prod.imageLink.includes("opera_queens") ||
+            prod.imageLink.includes("laura") ||
+            prod.imageLink.includes("10-Days")
+        );
+        const cardImgClass = isContain ? "force-contain" : "";
+        const cardImgStyle = isContain ? 'style="object-fit: contain !important; padding: 4px !important;"' : "";
+        
         card.innerHTML = `
             <div class="card-img-wrap">
-                <img src="${prod.imageLink}" alt="${prod.title}" onerror="this.src='https://images.squarespace-cdn.com/content/v1/66900b857cbcd75ecec7aebb/76c5f834-b81a-4593-a1ec-3a56fc73f5e7/Toronto+Opera+Festival+26+bannertickets+on+sale.png'">
+                <img src="${prod.imageLink}" alt="${prod.title}" class="${cardImgClass}" ${cardImgStyle} onload="if(this.naturalWidth && (this.naturalWidth/this.naturalHeight < 1.35 || this.src.includes('carmen_rigoletto'))) { this.style.setProperty('object-fit', 'contain', 'important'); this.style.padding = '4px'; }" onerror="this.src='https://images.squarespace-cdn.com/content/v1/66900b857cbcd75ecec7aebb/76c5f834-b81a-4593-a1ec-3a56fc73f5e7/Toronto+Opera+Festival+26+bannertickets+on+sale.png'">
                 <span class="card-company-tag">${prod.companyAbbr}</span>
             </div>
             <div class="card-content">
@@ -550,9 +563,22 @@ function showModal(prod) {
     modalTicketLink.href = prod.ticketLink;
     modalWebsiteLink.href = prod.companyWeb;
     
+    const isContainModal = prod.imageLink && (
+        prod.imageLink.includes("carmen_rigoletto") ||
+        prod.imageLink.includes("confluence") ||
+        prod.imageLink.includes("drag_me") ||
+        prod.imageLink.includes("logo") ||
+        prod.imageLink.includes("opera_by_request") ||
+        prod.imageLink.includes("opera_queens") ||
+        prod.imageLink.includes("laura") ||
+        prod.imageLink.includes("10-Days")
+    );
+    const modalImgClass = isContainModal ? "force-contain" : "";
+    const modalImgStyle = isContainModal ? 'style="object-fit: contain !important; padding: 12px !important;"' : "";
+
     modalImageContainer.innerHTML = `
-        <img src="${prod.imageLink}" alt="${prod.title}" onerror="this.src='https://images.squarespace-cdn.com/content/v1/66900b857cbcd75ecec7aebb/76c5f834-b81a-4593-a1ec-3a56fc73f5e7/Toronto+Opera+Festival+26+bannertickets+on+sale.png'">
-        <span class="card-company-tag" style="top:20px; left:20px;">${prod.companyAbbr}</span>
+        <img src="${prod.imageLink}" alt="${prod.title}" class="${modalImgClass}" ${modalImgStyle} onload="if(this.naturalWidth && (this.naturalWidth/this.naturalHeight < 1.35 || this.src.includes('carmen_rigoletto'))) { this.style.setProperty('object-fit', 'contain', 'important'); this.style.padding = '12px'; }" onerror="this.src='https://images.squarespace-cdn.com/content/v1/66900b857cbcd75ecec7aebb/76c5f834-b81a-4593-a1ec-3a56fc73f5e7/Toronto+Opera+Festival+26+bannertickets+on+sale.png'">
+        <span class="card-company-tag" style="top:20px; left:20px;">${prod.companyAbbr || ''}</span>
     `;
     
     productionModal.classList.add("show");

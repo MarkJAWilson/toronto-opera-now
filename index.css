@@ -494,10 +494,15 @@ button {
 .card-img-wrap img[src*="414072b8-af94-4fa8-b885-1eaf3a3bf86a"],
 .card-img-wrap img[src*="Season+Announcement+Posters+Final"],
 .card-img-wrap img[src*="Season%20Announcement%20Posters%20Final"],
-.card-img-wrap img[src*="drag_me_to_the_opera"] {
+.card-img-wrap img[src*="drag_me_to_the_opera"],
+.card-img-wrap img[src*="carmen_rigoletto"] {
     object-fit: contain;
     padding: 16px;
     background: rgba(255, 255, 255, 0.01);
+}
+
+.card-img-wrap img[src*="carmen_rigoletto"] {
+    padding: 8px;
 }
 
 .card-company-tag {
@@ -967,10 +972,15 @@ button {
 .modal-image-wrap img[src*="414072b8-af94-4fa8-b885-1eaf3a3bf86a"],
 .modal-image-wrap img[src*="Season+Announcement+Posters+Final"],
 .modal-image-wrap img[src*="Season%20Announcement%20Posters%20Final"],
-.modal-image-wrap img[src*="drag_me_to_the_opera"] {
+.modal-image-wrap img[src*="drag_me_to_the_opera"],
+.modal-image-wrap img[src*="carmen_rigoletto"] {
     object-fit: contain;
     padding: 32px;
     background: rgba(255, 255, 255, 0.01);
+}
+
+.modal-image-wrap img[src*="carmen_rigoletto"] {
+    padding: 20px;
 }
 
 .modal-details-wrap {

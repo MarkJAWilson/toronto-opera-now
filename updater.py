@@ -690,6 +690,7 @@ def scrape_atg():
 def scrape_redwood():
     print("Scraping The Redwood Theatre...")
     from datetime import datetime
+    import time
     url = "https://www.theredwoodtheatre.com/opera-classical-jazz"
     html = fetch_html(url)
     if not html:
@@ -705,8 +706,14 @@ def scrape_redwood():
             if href not in links:
                 links.append(href)
                 
+    # Filter for opera-related event URLs to avoid rate limits on non-opera events
+    opera_keywords = ['opera', 'carmen', 'rigoletto', 'cantatas', 'boheme', 'giovanni', 'traviata']
+    exclude_keywords = ['both-shows', 'jazz', 'steely-dan', 'pretzel-logic', 'bill-king', 'farah', 'eisenman', 'marc-jordan', 'ledbetter']
+    links = [l for l in links if any(k in l.lower() for k in opera_keywords) and not any(x in l.lower() for x in exclude_keywords)]
+
     productions = []
     for link in links:
+        time.sleep(0.3)
         detail_html = fetch_html(link)
         if not detail_html:
             continue
@@ -731,7 +738,7 @@ def scrape_redwood():
         is_opera = False
         if "opera" in title.lower() or "opera" in link.lower() or "opera" in desc.lower():
             is_opera = True
-        elif "giovanni" in title.lower() or "boheme" in title.lower() or "traviata" in title.lower():
+        elif any(k in title.lower() or k in link.lower() for k in ["giovanni", "boheme", "traviata", "carmen", "rigoletto"]):
             is_opera = True
             
         if not is_opera:
@@ -764,9 +771,7 @@ def scrape_redwood():
             try:
                 dt = datetime.strptime(iso_start, "%Y-%m-%dT%H:%M:%S")
                 date_str = dt.strftime("%B %d, %Y")
-                time_str = dt.strftime("%I:%M %p")
-                if time_str.startswith('0'):
-                    time_str = time_str[1:]
+                time_str = dt.strftime("%I:%M %p").lstrip('0')
             except Exception:
                 date_str = "June 28, 2026"
                 time_str = "3:00 PM"
@@ -781,6 +786,19 @@ def scrape_redwood():
                 
             description = event_data.get('description', desc)
             description = description.replace('&#010;', '\n')
+            if "rigoletto" in title.lower():
+                description = description.replace("Friday, November 13th", "Saturday, November 14th")
+            
+            # Align showtime if doors open 1 hour before
+            if "show begins at 8pm" in description.lower() or "show starts at 8pm" in description.lower() or "8pm" in title.lower():
+                time_str = "8:00 PM"
+                iso_start = f"{iso_start[:10]}T20:00:00"
+                
+            # Normalize end times spanning across dates mistakenly
+            if "carmen" in title.lower() and iso_end and iso_end[:10] != iso_start[:10]:
+                iso_end = f"{iso_start[:10]}T22:30:00"
+            elif "rigoletto" in title.lower() and iso_end and iso_end[:10] != iso_start[:10]:
+                iso_end = f"{iso_start[:10]}T22:00:00"
             
             price_str = "Pay-What-You-Can (Suggested $20)"
             offers = event_data.get('offers', {})
@@ -803,6 +821,10 @@ def scrape_redwood():
             composer = "Various / Operatic Highlights"
             if "Don Giovanni" in title:
                 composer = "Wolfgang Amadeus Mozart"
+            elif "Carmen" in title:
+                composer = "Georges Bizet"
+            elif "Rigoletto" in title:
+                composer = "Giuseppe Verdi"
             elif "La Bohème" in title or "Bohème" in title:
                 composer = "Giacomo Puccini"
             elif "Resurrection" in title:
@@ -812,11 +834,19 @@ def scrape_redwood():
                 
             status = "Upcoming"
             try:
-                today = datetime(2026, 5, 29)
+                today = datetime.now()
                 if dt < today:
                     status = "Passed"
             except Exception:
                 pass
+                
+            image_link = "assets/images/logo.png"
+            if "Opera 303" in title:
+                image_link = "assets/images/opera_303.jpg"
+            elif "Don Giovanni" in title:
+                image_link = "assets/images/don_giovanni.jpg"
+            elif "Carmen" in title or "Rigoletto" in title:
+                image_link = "assets/images/carmen_rigoletto.jpg"
                 
             productions.append({
                 "title": title,
@@ -828,7 +858,7 @@ def scrape_redwood():
                 "venue": venue,
                 "address": address,
                 "ticketLink": link,
-                "imageLink": "assets/images/opera_303.jpg" if "Opera 303" in title else "assets/images/don_giovanni.jpg" if "Don Giovanni" in title else "assets/images/logo.png",
+                "imageLink": image_link,
                 "price": price_str,
                 "description": description,
                 "status": status

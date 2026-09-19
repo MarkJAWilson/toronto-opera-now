@@ -25,7 +25,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css?v=2.2">
+    <style>
+        /* Immediate override to guarantee full poster visibility */
+        .card-img-wrap img[src*="carmen_rigoletto"],
+        .modal-image-wrap img[src*="carmen_rigoletto"],
+        img[src*="carmen_rigoletto"],
+        img.force-contain {
+            object-fit: contain !important;
+            padding: 4px !important;
+            background: #0f1423 !important;
+        }
+        .modal-image-wrap img[src*="carmen_rigoletto"] {
+            padding: 16px !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Premium background ambient glow spots -->
@@ -233,6 +247,6 @@
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=2.2"></script>
 </body>
 </html>

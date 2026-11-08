@@ -861,14 +861,14 @@
         {
           "title": "The Glenn Gould School Chamber Opera",
           "composer": "Samuel Barber / Leonard Bernstein",
-          "date": "November 7, 2026",
+          "date": "November 6 & 7, 2026",
           "time": "7:30 PM",
-          "isoStart": "2026-11-07T19:30:00",
+          "isoStart": "2026-11-06T19:30:00",
           "isoEnd": "2026-11-07T22:00:00",
           "venue": "Mazzoleni Concert Hall",
           "address": "273 Bloor St W, Toronto, ON M5S 1W2",
-          "ticketLink": "https://www.rcmusic.com/concert/ggs-chamber-opera-barbers-a-hand-of-bridge-and-bernsteins-trouble-in-tahiti-452801",
-          "imageLink": "https://rcmusic-production-strapi-media.s3.ca-central-1.amazonaws.com/GGS_Chamber_440x400_08e8727e55.png",
+          "ticketLink": "https://www.rcmusic.com/concert/ggs-chamber-opera-barbers-a-hand-of-bridge-and-bernsteins-trouble-in-tahiti-452601",
+          "imageLink": "https://rcmusic-production-strapi-media.s3.ca-central-1.amazonaws.com/The_Glenn_Gould_School_Chamber_Opera_440x400_0d24e69059.png",
           "price": "Tickets from $20",
           "description": "Students from The Glenn Gould School’s vocal program present a double bill of Samuel Barber’s A Hand of Bridge, a poignant miniature opera that reveals the hidden thoughts of four bridge players during a seemingly ordinary card game, and Leonard Bernstein’s Trouble in Tahiti, a jazz-infused one-act opera depicting a day in the life of a troubled married couple living in 1950s suburbia. Conducted by Jennifer Tung and directed by Mario Pacheco.",
           "status": "Upcoming"
